@@ -5,133 +5,134 @@ import {
   Award,
   BarChart2,
   CheckCircle2,
+  Cpu,
   Eye,
+  GraduationCap,
   Hammer,
+  Laptop,
   Lightbulb,
+  Radio,
   ShieldCheck,
+  Sparkles,
   Target,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/primitives'
 
 const VALUES = [
   {
-    icon: BarChart2,
-    title: 'Precision',
-    description: 'Meticulous attention to detail in every calculation and report.',
+    icon: Cpu,
+    title: 'Practical Lab Rigor',
+    description: '500+ hours of unrestricted lab access with real oscilloscopes, logic analyzers, and STM32 boards.',
   },
   {
     icon: ShieldCheck,
-    title: 'Stability',
-    description: 'Designing for longevity and resilience against environmental shifts.',
+    title: 'Industry-Standard Toolchains',
+    description: 'Master Vector CANalyzer, FreeRTOS, STM32CubeIDE, Keil, and Linux device drivers.',
   },
   {
     icon: Lightbulb,
-    title: 'Innovation',
-    description: 'Leveraging the latest seismic and geological technologies.',
+    title: 'Mentorship by Industry Experts',
+    description: 'Taught directly by working senior firmware developers and automotive ECU architects.',
   },
   {
-    icon: Hammer,
-    title: 'Safety',
-    description: 'An uncompromising approach to on-site and structural safety.',
+    icon: GraduationCap,
+    title: '100% Placement Commitment',
+    description: 'Dedicated 1-on-1 resume optimization, mock technical interviews, and direct hiring drives.',
   },
 ]
 
 const STEPS = [
   {
     step: '01',
-    title: 'Comprehensive Investigation',
+    title: 'Core Electronics & Bare-Metal C',
     description:
-      'Utilizing advanced CPT and boring techniques to map sub-surface profiles with 99.9% accuracy.',
+      'Master memory layout, pointers, data structures, register configurations, and peripheral drivers on real microcontrollers.',
   },
   {
     step: '02',
-    title: 'Laboratory Analysis',
+    title: 'Microcontroller Architecture & Protocols',
     description:
-      'Certified lab testing for soil classification, shear strength, and consolidation properties.',
+      'In-depth hands-on interfacing with ARM Cortex-M4, STM32, UART, SPI, I2C, and CAN communication buses.',
   },
   {
     step: '03',
-    title: 'Predictive Modeling',
+    title: 'RTOS & Automotive AUTOSAR',
     description:
-      'Sophisticated finite element analysis to simulate foundation behavior under extreme loads.',
+      'Design deterministic real-time systems using FreeRTOS kernel design, task scheduling, and AUTOSAR layered stacks.',
   },
   {
     step: '04',
-    title: 'Strategic Consultancy',
+    title: 'Capstone Prototyping & Placement Drives',
     description:
-      'Delivering actionable engineering recommendations that balance safety with project budget.',
+      'Build end-to-end hardware prototypes followed by rigorous mock interview sessions and direct campus hiring drives.',
   },
 ]
 
 const EXPERTS = [
   {
-    name: 'Sarah Jenkins, P.E.',
-    role: 'CHIEF GEOTECHNICAL ENGINEER',
+    name: 'Sarah Deshmukh',
+    role: 'LEAD EMBEDDED ARCHITECT',
     image: '/images/team-sarah.png',
-    bio: 'Specializing in seismic soil-structure interaction and high-rise foundation design with 15+ years experience.',
+    bio: '15+ years of R&D experience in ARM Cortex firmware, FreeRTOS kernel design, and Linux device driver architectures.',
   },
   {
-    name: 'David Chen, Ph.D.',
-    role: 'SENIOR GEOTECHNICAL CONSULTANT',
+    name: 'David Kulkarni',
+    role: 'SENIOR AUTOMOTIVE AUTOSAR CONSULTANT',
     image: '/images/team-david.png',
-    bio: 'Leading expert in slope stability and innovative soil reinforcement technologies for infrastructure.',
+    bio: 'Former Tier-1 ECU development specialist with deep expertise in CAN-FD, CAPL scripting, and ISO 26262 functional safety.',
   },
   {
-    name: 'Michael Roberts',
-    role: 'DIRECTOR OF LABORATORY SERVICES',
+    name: 'Michael Fernandes',
+    role: 'DIRECTOR OF HARDWARE & IOT LABS',
     image: '/images/team-michael.png',
-    bio: 'Oversees our ASTM-certified laboratory, ensuring the highest standards of data integrity and material testing.',
+    bio: 'Oversees our ISO-certified offline electronics lab, ensuring every student masters advanced testbenches and real microcontrollers.',
   },
 ]
 
 const ACCREDITATIONS = [
-  { icon: Award, label: 'ISO 9001:2015' },
-  { icon: ShieldCheck, label: 'ASTM CERTIFIED LAB' },
-  { icon: CheckCircle2, label: 'ASCE PROFESSIONAL' },
-  { icon: CheckCircle2, label: 'LICENSED P.E. TEAM' },
+  { icon: Award, label: 'NASSCOM® ACCREDITED' },
+  { icon: ShieldCheck, label: 'ISO 9001:2015 CERTIFIED LAB' },
+  { icon: CheckCircle2, label: '500+ HIRING PARTNERS' },
+  { icon: CheckCircle2, label: '100% PLACEMENT SUPPORT' },
 ]
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-navy py-16 text-navy-foreground md:py-24">
-        <div className="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-widest text-white uppercase backdrop-blur-sm">
-              Established Authority Since 1998
-            </span>
-            <h1 className="mt-6 font-display text-4xl font-extrabold tracking-tight uppercase text-white sm:text-5xl md:text-6xl">
-              Engineering the <span className="text-primary">Foundations</span> of Tomorrow.
-            </h1>
-            <p className="mt-6 text-base leading-relaxed text-navy-muted">
-              At Galaxia Geotech, we combine decades of field experience with cutting-edge
-              laboratory analysis to provide geotechnical certainty for the world&apos;s most
-              complex infrastructure projects.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/services"
-                className="rounded-md bg-primary px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                Our Technical Specs
-              </Link>
-              <Link
-                href="/projects"
-                className="rounded-md border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white/15"
-              >
-                View Case Studies
-              </Link>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-xl border border-white/10 shadow-2xl">
-            <Image
-              src="/images/hero-server-room.png"
-              alt="Galaxia Geotech R&D Workspace"
-              width={900}
-              height={650}
-              className="h-full w-full object-cover"
-            />
+      <section className="relative flex min-h-[460px] items-center justify-center overflow-hidden bg-navy py-16 text-navy-foreground md:min-h-[500px] md:py-24">
+        <Image
+          src="/images/hero-server-room.png"
+          alt="Galaxia Geotech Offline Embedded Systems Lab background"
+          fill
+          priority
+          className="object-cover opacity-55"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/55 to-navy/75" />
+        
+        <div className="container-page relative z-10 w-full text-center">
+          <Eyebrow tone="white">NASSCOM® ALIGNED &amp; ISO 9001:2015 ACADEMY</Eyebrow>
+          <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight uppercase text-white sm:text-5xl md:text-6xl">
+            Empowering Engineers with <span className="text-primary">Hands-on Embedded</span> Mastery
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-navy-muted">
+            At Galaxia Geotech Academy, we bridge the gap between college theory and real-world
+            engineering through rigorous offline hardware labs, automotive toolchains, and
+            dedicated placement support in Pune.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/courses"
+              className="rounded-md bg-primary px-7 py-3.5 text-xs font-bold tracking-wider uppercase text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Explore All Courses
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-md border border-white/30 bg-white/5 px-7 py-3.5 text-xs font-bold tracking-wider uppercase text-white transition-colors hover:bg-white/15"
+            >
+              Book Free Demo Class
+            </Link>
           </div>
         </div>
       </section>
@@ -141,34 +142,35 @@ export default function AboutPage() {
         <div className="container-page">
           <Eyebrow>CORE IDENTITY</Eyebrow>
           <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight uppercase text-foreground sm:text-4xl">
-            Mission & Vision
+            Mission &amp; Vision
           </h2>
           <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6">
               <article className="rounded-lg border border-border bg-card p-6 shadow-sm">
                 <div className="flex items-center gap-4">
                   <span className="flex size-10 items-center justify-center rounded bg-navy text-navy-foreground">
-                    <Target className="size-5" />
+                    <Target className="size-5 text-primary" />
                   </span>
                   <h3 className="text-xl font-bold text-foreground">Our Mission</h3>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  To deliver unparalleled geotechnical precision through rigorous site investigation
-                  and innovative engineering design, ensuring every structure stands on an
-                  unwavering foundation.
+                  To provide industry-aligned, 100% practical hardware education in Embedded Systems,
+                  Automotive AUTOSAR, and IoT, transforming fresh engineering graduates and working
+                  professionals into confident, high-performing firmware developers.
                 </p>
               </article>
 
               <article className="rounded-lg border border-border bg-card p-6 shadow-sm">
                 <div className="flex items-center gap-4">
                   <span className="flex size-10 items-center justify-center rounded bg-navy text-navy-foreground">
-                    <Eye className="size-5" />
+                    <Eye className="size-5 text-primary" />
                   </span>
                   <h3 className="text-xl font-bold text-foreground">Our Vision</h3>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  To be the global benchmark for geotechnical reliability, pioneering sustainable
-                  sub-surface engineering solutions for a safer and more resilient built environment.
+                  To be India&apos;s premier offline embedded systems training academy and engineering R&amp;D
+                  talent hub, recognized globally for producing world-class embedded hardware, firmware,
+                  and automotive software architects.
                 </p>
               </article>
             </div>
@@ -177,16 +179,16 @@ export default function AboutPage() {
               <div className="overflow-hidden rounded-lg border border-border shadow-md">
                 <Image
                   src="/images/lab-cleanroom.png"
-                  alt="Laboratory and testing facility"
+                  alt="Embedded Systems Practical Testing Lab"
                   width={800}
                   height={600}
                   className="h-72 w-full object-cover sm:h-96"
                 />
               </div>
               <div className="mt-4 rounded-lg bg-primary p-6 text-primary-foreground shadow-lg sm:absolute sm:-bottom-6 sm:-left-6 sm:mt-0 sm:max-w-xs">
-                <p className="font-display text-3xl font-extrabold tracking-tight">250+</p>
+                <p className="font-display text-3xl font-extrabold tracking-tight">4,850+</p>
                 <p className="mt-1 text-xs font-bold tracking-wider uppercase">
-                  SUCCESSFUL INFRASTRUCTURE PROJECTS DELIVERED NATIONWIDE
+                  GRADUATES PLACED IN TOP EMBEDDED &amp; AUTOMOTIVE ENTERPRISES
                 </p>
               </div>
             </div>
@@ -202,8 +204,8 @@ export default function AboutPage() {
             The Values That Guide Us
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground">
-            Our commitment to excellence is reflected in every soil sample we test and every
-            foundation we design.
+            Our commitment to excellence is reflected in every line of code our students write and
+            every hardware circuit they test.
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -232,9 +234,9 @@ export default function AboutPage() {
       <section className="bg-background py-20">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <Eyebrow>PROCESS & METHODOLOGY</Eyebrow>
+            <Eyebrow>PROCESS &amp; METHODOLOGY</Eyebrow>
             <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight uppercase text-foreground sm:text-4xl">
-              Our Technical Excellence Model
+              Our 4-Step Training to Placement Roadmap
             </h2>
 
             <div className="mt-8 space-y-6">
@@ -255,32 +257,32 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
               <Image
-                src="/images/soil-lab.png"
-                alt="Microscope soil analysis"
+                src="/images/electronics-lab.png"
+                alt="Electronics and microcontrollers lab"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
               <Image
-                src="/images/blueprint-desk.png"
-                alt="Engineering blueprints"
+                src="/images/firmware-coding.png"
+                alt="Firmware coding and RTOS development"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
               <Image
-                src="/images/surveyor-field.png"
-                alt="Field surveyor"
+                src="/images/hands-on-wiring.png"
+                alt="Hands-on circuit wiring and testing"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
               <Image
-                src="/images/bridge-construction.png"
-                alt="Site drilling equipment"
+                src="/images/hero-automotive-pcb.png"
+                alt="Automotive ECU testing"
                 fill
                 className="object-cover"
               />
@@ -296,18 +298,18 @@ export default function AboutPage() {
             <div>
               <Eyebrow tone="white">TECHNICAL LEADERSHIP</Eyebrow>
               <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight uppercase text-white sm:text-4xl">
-                The Experts Behind Our Stability
+                The Mentors Guiding Your Career
               </h2>
               <p className="mt-3 max-w-xl text-sm text-navy-muted">
-                Our team comprises licensed professional engineers, geologists, and lab technicians
-                dedicated to technical rigor and project success.
+                Learn from seasoned industry professionals who bring real-world product design,
+                automotive toolchains, and firmware architectures directly to the classroom.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex shrink-0 rounded-md border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
             >
-              Join Our Team
+              Meet Our Faculty
             </Link>
           </div>
 
@@ -358,11 +360,11 @@ export default function AboutPage() {
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <h2 className="font-display text-3xl font-extrabold tracking-tight uppercase text-white sm:text-4xl">
-                  Ready to secure your project&apos;s foundation?
+                  Ready to launch your Embedded &amp; IoT career?
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-navy-muted">
-                  Consult with our geotechnical specialists today and get a comprehensive
-                  evaluation for your upcoming site development.
+                  Visit our Pune training center, attend a free demo session, and interact with our
+                  senior mentors to begin your journey.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
@@ -370,13 +372,13 @@ export default function AboutPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/90"
                 >
-                  Request Consultation <ArrowRight className="size-4" />
+                  Book Free Demo Class <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/courses"
                   className="inline-flex items-center rounded-md border border-white/30 bg-white/5 px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
                 >
-                  Contact Support
+                  Explore All Courses
                 </Link>
               </div>
             </div>

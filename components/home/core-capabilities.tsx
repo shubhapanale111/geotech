@@ -1,28 +1,28 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Building2, Layers, Microscope } from 'lucide-react'
+import { ArrowRight, Cpu, Layers, Radio, Wrench } from 'lucide-react'
 
 const CAPABILITIES = [
   {
-    icon: Microscope,
-    image: '/images/soil-lab.png',
-    title: 'Soil Analysis',
+    icon: Cpu,
+    image: '/images/electronics-lab.png',
+    title: 'ARM Cortex & STM32 Firmware Lab',
     description:
-      'Comprehensive laboratory testing and field investigation to determine subsurface mechanical properties and load-bearing capacity.',
+      'Master bare-metal C programming, register-level peripherals (GPIO, Timer, ADC, DMA), and serial communication protocols (UART, SPI, I2C) on real STM32 microcontrollers.',
   },
   {
     icon: Layers,
-    image: '/images/blueprint-desk.png',
-    title: 'Foundation Design',
+    image: '/images/hero-automotive-pcb.png',
+    title: 'Automotive ECU & AUTOSAR Protocols',
     description:
-      'Expert engineering solutions for deep and shallow foundations, retaining structures, and ground improvement techniques.',
+      'Hands-on ECU development with CAN/CAN-FD, LIN bus analyzers, Vector CANalyzer toolchain, CAPL scripting, and AUTOSAR layered software architecture.',
   },
   {
-    icon: Building2,
-    image: '/images/surveyor-field.png',
-    title: 'Site Investigation',
+    icon: Radio,
+    image: '/images/hero-circuit-macro.png',
+    title: 'FreeRTOS & Industrial IoT Lab',
     description:
-      'Detailed geophysical surveys and drilling programs to mitigate risk and ensure structural integrity before construction.',
+      'Build deterministic real-time systems using FreeRTOS kernel (tasks, queues, semaphores, mutexes) integrated with ESP32, LoRaWAN, MQTT, and AWS IoT cloud telemetry.',
   },
 ]
 
@@ -31,23 +31,24 @@ export function CoreCapabilities() {
     <section className="bg-white py-24">
       <div className="container-page">
         <p className="text-xs font-bold tracking-widest text-primary uppercase">
-          Technical Excellence
+          Hardware Lab Infrastructure
         </p>
         <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <h2 className="font-display text-4xl font-extrabold tracking-tight uppercase text-gray-900 sm:text-5xl">
-              Our Core Capabilities
+            <h2 className="font-display text-3xl font-extrabold tracking-tight uppercase text-gray-900 sm:text-4xl">
+              Our Core Practical Labs &amp; Toolchains
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-gray-600">
-              Leveraging cutting-edge subsurface scanning and rigorous laboratory analysis to
-              deliver ground engineering solutions that stand the test of time.
+            <p className="mt-4 text-base leading-relaxed text-gray-600">
+              Unlike theoretical coaching classes, our students spend 500+ hours working directly
+              with digital oscilloscopes, logic analyzers, development boards, and industry-standard
+              ECU diagnostic software.
             </p>
           </div>
           <Link
-            href="/services"
+            href="/courses"
             className="inline-flex shrink-0 items-center gap-2 text-xs font-bold tracking-widest text-gray-900 hover:text-primary uppercase"
           >
-            View All Services <ArrowRight className="size-4" />
+            View All Courses <ArrowRight className="size-4" />
           </Link>
         </div>
 
@@ -57,12 +58,12 @@ export function CoreCapabilities() {
             return (
               <article
                 key={item.title}
-                className="overflow-hidden rounded border border-gray-100 bg-white shadow-sm"
+                className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="relative h-48">
                   <Image src={item.image} alt={item.title} fill className="object-cover" />
                   <span className="absolute top-4 left-4 flex size-10 items-center justify-center rounded bg-gray-900 text-white">
-                    <Icon className="size-5" />
+                    <Icon className="size-5 text-primary" />
                   </span>
                 </div>
                 <div className="p-8">
@@ -71,10 +72,10 @@ export function CoreCapabilities() {
                     {item.description}
                   </p>
                   <Link
-                    href="/services"
-                    className="mt-8 flex w-full items-center justify-center rounded bg-gray-50 px-4 py-3 text-sm font-bold text-gray-900 transition-colors hover:bg-gray-100"
+                    href="/courses"
+                    className="mt-8 flex w-full items-center justify-center rounded bg-gray-50 px-4 py-3 text-xs font-bold uppercase tracking-wider text-gray-900 transition-colors hover:bg-gray-100"
                   >
-                    Learn More
+                    Explore Lab Curriculum &rarr;
                   </Link>
                 </div>
               </article>

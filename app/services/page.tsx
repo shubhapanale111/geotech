@@ -6,57 +6,60 @@ import {
   Check,
   CheckCircle2,
   Clock,
-  Drill,
+  Cpu,
   FileCheck,
+  GraduationCap,
   Layers,
   MapPin,
-  Microscope,
+  Radio,
   ShieldCheck,
+  Smartphone,
   Wrench,
+  Zap,
 } from 'lucide-react'
 import { CheckItem, Eyebrow } from '@/components/primitives'
 
 const FEATURED_SERVICES = [
   {
-    image: '/images/soil-lab.png',
-    tag: 'Laboratory & Field',
-    icon: Microscope,
-    title: 'Advanced Soil Analysis',
-    description:
-      'Comprehensive laboratory testing and field analysis to determine the mechanical and physical properties of soil. Essential for determining load-bearing capacity and ground stability.',
-    features: [
-      'Atterberg Limits Testing',
-      'Triaxial Shear Strength',
-      'Hydraulic Conductivity',
-      'Compaction Testing',
-    ],
-  },
-  {
-    image: '/images/blueprint-desk.png',
-    tag: 'Structural Geotech',
+    image: '/images/hero-automotive-pcb.png',
+    tag: 'Automotive R&D',
     icon: Layers,
-    title: 'Foundation Design & Engineering',
+    title: 'Automotive ECU & AUTOSAR Prototyping',
     description:
-      'Precision engineering for shallow and deep foundation systems. We provide optimized designs that ensure structural integrity while minimizing material waste and construction costs.',
+      'Turnkey automotive electronic control unit (ECU) firmware architecture, Vector CANalyzer CAPL testing, diagnostic stack integration (UDS), and ISO 26262 functional safety compliance for mobility and EV systems.',
     features: [
-      'Pile Foundation Design',
-      'Raft & Spread Footings',
-      'Settlement Analysis',
-      'Retaining Wall Systems',
+      'Vector CANalyzer & CAPL Testing',
+      'CAN, CAN-FD & LIN Protocol Stacks',
+      'AUTOSAR Classic Layered Architecture',
+      'ISO 26262 ASIL Functional Safety',
     ],
   },
   {
-    image: '/images/surveyor-field.png',
-    tag: 'Field Operations',
-    icon: MapPin,
-    title: 'Site Investigation & Surveying',
+    image: '/images/hero-circuit-macro.png',
+    tag: 'Industrial IoT',
+    icon: Radio,
+    title: 'Industrial IoT & Edge Computing Systems',
     description:
-      'Systematic exploration of site conditions using state-of-the-art drilling and geophysical techniques. We mitigate risk by providing clear visibility into subsurface conditions.',
+      'Design of mission-critical IoT gateways, ultra-low-power sensor nodes, and real-time edge computing solutions with FreeRTOS multitasking and direct AWS IoT Core / Azure IoT telemetry streams.',
     features: [
-      'Borehole Drilling',
-      'SPT & CPT Testing',
-      'Geophysical Surveys',
-      'Rock Core Sampling',
+      'LoRaWAN, Zigbee & Cellular Mesh',
+      'FreeRTOS Real-Time Kernel Design',
+      'AWS IoT Greengrass & Azure Hub',
+      'Hardware Cryptography & Secure Boot',
+    ],
+  },
+  {
+    image: '/images/electronics-lab.png',
+    tag: 'Corporate Academy',
+    icon: Cpu,
+    title: 'Corporate Training & Embedded Lab Setup',
+    description:
+      'Custom upskilling programs and turnkey electronics lab setup for engineering enterprises, OEMs, and Tier-1 automotive teams. Tailored hardware workbenches with oscilloscopes, STM32 kits, and bus analyzers.',
+    features: [
+      'Custom Tier-1 Corporate Syllabus',
+      'Turnkey Electronics Lab Infrastructure',
+      'Hands-on Workbenches & DSOs',
+      '1-on-1 Code Reviews & Assessments',
     ],
   },
 ]
@@ -64,57 +67,80 @@ const FEATURED_SERVICES = [
 const SPECIALIZED_SERVICES = [
   {
     icon: Activity,
-    title: 'Slope Stability Analysis',
+    title: 'Firmware Code Audits',
     description:
-      'Numerical modeling and field assessment to prevent landslides and ensure the safety of embankments and excavations.',
+      'MISRA-C static analysis, memory leak detection, and deterministic performance profiling for mission-critical firmware.',
   },
   {
     icon: Wrench,
-    title: 'Ground Improvement',
+    title: 'Hardware-in-the-Loop (HIL) Testing',
     description:
-      'Techniques including soil stabilization, grouting, and stone columns to enhance poor ground conditions for construction.',
+      'Automated test rig development simulating real automotive sensors, actuators, and CAN bus traffic for validation.',
   },
   {
     icon: ShieldCheck,
-    title: 'Environmental Geotechnics',
+    title: 'Board Bring-Up & Debugging',
     description:
-      'Assessment of contaminated land and design of remediation strategies for sustainable urban development.',
+      'Initial PCB prototype bring-up, JTAG/SWD debugging, signal integrity analysis, and clock tree verification.',
   },
   {
-    icon: Clock,
-    title: 'Dewatering Solutions',
+    icon: Zap,
+    title: 'FreeRTOS Kernel Optimization',
     description:
-      'Design and implementation of groundwater control systems for deep excavations and underground structures.',
+      'Context switch tuning, task priority design, mutex deadlock prevention, and deterministic ISR latency reduction.',
   },
   {
-    icon: Drill,
-    title: 'Pavement Engineering',
+    icon: Smartphone,
+    title: 'Protocol Stack Integration',
     description:
-      'Subgrade evaluation and structural design for highways, airports, and heavy industrial pavements.',
+      'Custom device driver development for SPI, I2C, UART, Ethernet, and BLE communication modules.',
   },
   {
     icon: FileCheck,
-    title: 'Technical Audits',
+    title: 'MBD & MATLAB Simulink',
     description:
-      'Independent review and verification of geotechnical designs and construction quality control measures.',
+      'Model-Based Design, auto-code generation with Embedded Coder, and MIL/SIL/PIL verification pipelines.',
   },
 ]
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-navy py-16 text-navy-foreground md:py-24">
-        <div className="container-page text-center">
-          <Eyebrow tone="white">PROFESSIONAL ENGINEERING SERVICES</Eyebrow>
+      {/* Hero Section with BG Image and Overlay */}
+      <section className="relative flex min-h-[460px] items-center justify-center overflow-hidden bg-navy py-16 text-navy-foreground md:min-h-[500px] md:py-24">
+        <Image
+          src="/images/hero-automotive-pcb.png"
+          alt="Automotive Embedded Systems and ECU background"
+          fill
+          priority
+          className="object-cover opacity-55"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/55 to-navy/75" />
+        
+        <div className="container-page relative z-10 w-full text-center">
+          <Eyebrow tone="white">EMBEDDED R&amp;D &amp; CORPORATE ACADEMY</Eyebrow>
           <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight uppercase text-white sm:text-5xl md:text-6xl">
-            Expert Geotechnical Solutions
+            Enterprise Embedded Solutions &amp; <span className="text-primary">Training Labs</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-navy-muted">
-            Galaxia Geotech delivers high-precision geotechnical consultancy, from initial site
-            investigation to final foundation design. We specialize in complex infrastructure
-            projects requiring absolute stability and architectural rigor.
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-navy-muted">
+            Galaxia Geotech delivers high-precision embedded systems prototyping, automotive AUTOSAR
+            consultancy, industrial IoT architecture, and tailored corporate engineering training
+            programs in Pune.
           </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="rounded-md bg-primary px-7 py-3.5 text-xs font-bold tracking-wider uppercase text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Inquire for Corporate Training
+            </Link>
+            <Link
+              href="/courses"
+              className="rounded-md border border-white/30 bg-white/5 px-7 py-3.5 text-xs font-bold tracking-wider uppercase text-white transition-colors hover:bg-white/15"
+            >
+              View Student Courses
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -155,7 +181,7 @@ export default function ServicesPage() {
                     {service.description}
                   </p>
 
-                  <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     {service.features.map((feat) => (
                       <div key={feat} className="flex items-center gap-2 text-xs font-medium text-foreground">
                         <CheckCircle2 className="size-4 text-primary shrink-0" />
@@ -169,13 +195,13 @@ export default function ServicesPage() {
                       href="/contact"
                       className="rounded-md bg-navy px-6 py-3 text-xs font-bold tracking-wider text-navy-foreground uppercase transition-colors hover:bg-navy/90"
                     >
-                      Inquire for Project
+                      Inquire for Training &amp; Services
                     </Link>
                     <Link
-                      href="/services/automotive-embedded"
+                      href="/courses"
                       className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-xs font-bold tracking-wider text-foreground uppercase transition-colors hover:bg-muted"
                     >
-                      View Technical Specs <ArrowRight className="size-4" />
+                      View Lab Curriculum <ArrowRight className="size-4" />
                     </Link>
                   </div>
                 </div>
@@ -189,13 +215,13 @@ export default function ServicesPage() {
       <section className="bg-muted/40 py-20">
         <div className="container-page">
           <div className="text-center">
-            <Eyebrow>SPECIALIZED EXPERTISE</Eyebrow>
+            <Eyebrow>TECHNICAL CAPABILITIES</Eyebrow>
             <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight uppercase text-foreground sm:text-4xl">
-              Comprehensive Technical Support
+              Specialized Engineering Support
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground">
-              Beyond core geotechnical investigations, we provide a full suite of specialized
-              consultancy services to support complex civil engineering challenges.
+              From low-level firmware architecture to complete automotive testbench setup, our team
+              provides end-to-end embedded technical consultancy.
             </p>
           </div>
 
@@ -208,7 +234,7 @@ export default function ServicesPage() {
                   className="rounded-lg border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
                 >
                   <span className="flex size-10 items-center justify-center rounded bg-navy text-navy-foreground">
-                    <Icon className="size-5" />
+                    <Icon className="size-5 text-primary" />
                   </span>
                   <h3 className="mt-4 text-lg font-bold text-foreground">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -226,12 +252,12 @@ export default function ServicesPage() {
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-              The Foundation of Your Project&apos;s Success
+              The Standard of Engineering Excellence
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              At Galaxia Geotech, we understand that every infrastructure project is only as stable
-              as the ground it stands on. Our methodology combines decades of field engineering
-              experience with cutting-edge analytical tools.
+              At Galaxia Geotech, we combine senior R&amp;D industry veterans with modern laboratory
+              toolchains to deliver unmatched reliability in embedded firmware, automotive ECUs,
+              and IoT deployments.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -239,9 +265,9 @@ export default function ServicesPage() {
                 <div className="flex items-start gap-3">
                   <Check className="mt-0.5 size-5 shrink-0 text-primary" strokeWidth={3} />
                   <div>
-                    <h3 className="text-sm font-bold text-foreground">ISO 9001 Certified Labs</h3>
+                    <h3 className="text-sm font-bold text-foreground">ISO 9001:2015 Certified Laboratories</h3>
                     <p className="mt-1 text-xs text-muted-foreground">
-                      Rigorous quality control and standardized testing protocols.
+                      Fully equipped testing workbenches with digital oscilloscopes, logic analyzers, and CAN tools.
                     </p>
                   </div>
                 </div>
@@ -251,9 +277,9 @@ export default function ServicesPage() {
                 <div className="flex items-start gap-3">
                   <Check className="mt-0.5 size-5 shrink-0 text-primary" strokeWidth={3} />
                   <div>
-                    <h3 className="text-sm font-bold text-foreground">Risk Mitigation Experts</h3>
+                    <h3 className="text-sm font-bold text-foreground">Senior R&amp;D Industry Mentors</h3>
                     <p className="mt-1 text-xs text-muted-foreground">
-                      Identifying subsurface hazards before they become costly liabilities.
+                      Engineers with 15+ years of production experience in automotive and semiconductor leaders.
                     </p>
                   </div>
                 </div>
@@ -263,9 +289,9 @@ export default function ServicesPage() {
                 <div className="flex items-start gap-3">
                   <Check className="mt-0.5 size-5 shrink-0 text-primary" strokeWidth={3} />
                   <div>
-                    <h3 className="text-sm font-bold text-foreground">Rapid Mobilization</h3>
+                    <h3 className="text-sm font-bold text-foreground">100% Practical Hands-On Training</h3>
                     <p className="mt-1 text-xs text-muted-foreground">
-                      Responsive field teams capable of deploying to remote sites quickly.
+                      500+ hours of individual hardware lab time on real STM32, ARM Cortex, and CANalyzer toolchains.
                     </p>
                   </div>
                 </div>
@@ -282,21 +308,21 @@ export default function ServicesPage() {
             </div>
 
             <div className="rounded-lg bg-primary p-8 text-center text-primary-foreground shadow-md">
-              <p className="font-display text-4xl font-extrabold">98%</p>
-              <p className="mt-2 text-xs font-bold tracking-wider uppercase">CLIENT RETENTION</p>
+              <p className="font-display text-4xl font-extrabold">98.4%</p>
+              <p className="mt-2 text-xs font-bold tracking-wider uppercase">PLACEMENT RATE</p>
             </div>
 
             <div className="rounded-lg bg-navy p-8 text-center text-navy-foreground shadow-md">
-              <p className="font-display text-4xl font-extrabold">500</p>
+              <p className="font-display text-4xl font-extrabold text-white">500+</p>
               <p className="mt-2 text-xs font-bold tracking-wider text-navy-muted uppercase">
-                PROJECTS COMPLETED
+                HIRING PARTNERS
               </p>
             </div>
 
             <div className="rounded-lg border border-border bg-muted p-8 text-center">
-              <p className="font-display text-4xl font-extrabold text-foreground">24h</p>
+              <p className="font-display text-4xl font-extrabold text-foreground">500h+</p>
               <p className="mt-2 text-xs font-bold tracking-wider text-muted-foreground uppercase">
-                EMERGENCY SUPPORT
+                HARDWARE LAB TIME
               </p>
             </div>
           </div>
@@ -308,12 +334,11 @@ export default function ServicesPage() {
         <div className="container-page grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <h2 className="font-display text-3xl font-extrabold tracking-tight uppercase text-white sm:text-4xl">
-              Ready to Discuss Your Next Infrastructure Project?
+              Ready to Discuss Your Corporate Training or Project?
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-navy-muted">
-              Our team of senior geotechnical consultants is available for preliminary site
-              assessments and project reviews. Partner with us for precision-engineered
-              foundations.
+              Connect with our academic directors and technical consultants for custom training
+              modules or hardware laboratory visits at our Pune facility.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -326,7 +351,7 @@ export default function ServicesPage() {
                 href="/contact"
                 className="rounded-md border border-white/30 bg-white/5 px-7 py-3.5 text-xs font-bold tracking-wider uppercase text-white transition-colors hover:bg-white/10"
               >
-                Contact Our Office
+                Book Free Demo Class
               </Link>
             </div>
           </div>
@@ -336,15 +361,15 @@ export default function ServicesPage() {
               <div className="flex items-center gap-3">
                 <Clock className="size-5 text-primary" />
                 <div>
-                  <p className="text-xs text-navy-muted uppercase">RESPONSE TIME</p>
-                  <p className="font-bold text-white">Under 24 Hours</p>
+                  <p className="text-xs text-navy-muted uppercase">COUNSELING RESPONSE</p>
+                  <p className="font-bold text-white">Under 30 Minutes</p>
                 </div>
               </div>
               <div className="border-t border-white/10 pt-4 flex items-center gap-3">
                 <ShieldCheck className="size-5 text-primary" />
                 <div>
-                  <p className="text-xs text-navy-muted uppercase">QUOTE ACCURACY</p>
-                  <p className="font-bold text-white">99.9% Guaranteed</p>
+                  <p className="text-xs text-navy-muted uppercase">ACCREDITATION</p>
+                  <p className="font-bold text-white">NASSCOM® &amp; ISO 9001</p>
                 </div>
               </div>
             </div>

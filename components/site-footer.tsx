@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import { Globe, Mail, MapPin, Mountain, Phone } from 'lucide-react'
+import { Cpu, Globe, Mail, MapPin, Phone } from 'lucide-react'
 import { FacebookIcon, LinkedInIcon, TwitterIcon } from '@/components/social-icons'
 
 const NAV = [
   { href: '/', label: 'Home' },
+  { href: '/courses', label: 'Embedded Courses' },
   { href: '/about', label: 'About Us' },
-  { href: '/services', label: 'Services' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/courses', label: 'Courses' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/courses/embedded-course-pune', label: 'Embedded Systems Pune' },
+  { href: '/services/automotive-embedded', label: 'Automotive & AUTOSAR' },
+  { href: '/contact', label: 'Book Demo Class' },
 ]
 
 const SOCIALS = [
@@ -26,21 +26,20 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-2.5">
               <span className="flex size-8 items-center justify-center rounded-md bg-navy text-navy-foreground">
-                <Mountain className="size-4" strokeWidth={2.2} />
+                <Cpu className="size-4 text-primary" strokeWidth={2.2} />
               </span>
               <span className="font-display text-base font-bold tracking-wide text-foreground">
-                GALAXIA GEOTECH
+                GALAXIA GEOTECH <span className="text-xs text-primary font-semibold">ACADEMY</span>
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Providing industry-leading geotechnical consultancy and civil engineering expertise
-              for the infrastructure projects of tomorrow. Committed to safety, precision, and
-              excellence.
+              Pune&apos;s leading offline training academy for Embedded Systems, Automotive AUTOSAR,
+              and IoT. Hands-on hardware labs with 100% placement assistance.
             </p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold tracking-wide text-foreground">NAVIGATION</h3>
+            <h3 className="text-sm font-semibold tracking-wide text-foreground">QUICK LINKS</h3>
             <ul className="mt-4 space-y-3">
               {NAV.map((item) => (
                 <li key={item.label}>
@@ -56,25 +55,28 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold tracking-wide text-foreground">CONTACT US</h3>
+            <h3 className="text-sm font-semibold tracking-wide text-foreground">TRAINING LAB</h3>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
-                <span>123 Engineering Way, Metro City</span>
+                <span>Geotech Tech Park, Hadapsar / FC Road, Pune, MH 411028</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="size-4 shrink-0 text-primary" />
-                <span>+1 (555) 012-3456</span>
+                <span>+91 98765 43210</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="size-4 shrink-0 text-primary" />
-                <span>contact@galaxiageotech.com</span>
+                <span>admissions@galaxiageotech.com</span>
               </li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold tracking-wide text-foreground">FOLLOW US</h3>
+            <p className="mt-4 text-xs text-muted-foreground">
+              Follow our community of 5,000+ embedded developers and student placement updates.
+            </p>
             <div className="mt-4 flex items-center gap-3">
               {SOCIALS.map((social) => {
                 const Icon = social.icon
@@ -94,7 +96,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center">
-          <p>© 2024 Galaxia Geotech. All rights reserved.</p>
+          <p>© 2026 Galaxia Geotech Academy. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="#" className="transition-colors hover:text-foreground">
               Privacy Policy

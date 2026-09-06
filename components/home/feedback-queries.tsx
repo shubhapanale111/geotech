@@ -6,35 +6,40 @@ import { FaqAccordion } from '@/components/faq-accordion'
 const TESTIMONIALS = [
   {
     quote:
-      'Galaxia\u2019s soil analysis was pivotal for our deep tunnel project. Their technical precision saved us weeks of potential delay during the excavation phase.',
-    name: 'Sarah Jenkins',
-    role: 'Director of Infrastructure, UrbanRail',
-    initials: 'SJ',
+      'The offline hardware lab in Pune gave me hands-on confidence with ARM Cortex and CAN protocols that college never provided. Secured an Embedded Firmware Engineer role at Bosch with 8.5 LPA within 2 weeks of finishing!',
+    name: 'Rohan Deshmukh',
+    role: 'Embedded Firmware Engineer, Bosch',
+    initials: 'RD',
   },
   {
     quote:
-      'Professionalism and engineering rigor define Galaxia Geotech. Their foundation design for our skyscraper project exceeded structural requirements while staying cost-effective.',
-    name: 'Markus Vance',
-    role: 'Principal Engineer, SkyBuild Group',
-    initials: 'MV',
+      'The AUTOSAR and Vector CANalyzer practicals were game changers for me. Mentors are senior developers who explain real ECU architectures with live debugging. Best decision for my automotive career.',
+    name: 'Pooja Kulkarni',
+    role: 'Automotive ECU Developer, Continental',
+    initials: 'PK',
   },
 ]
 
 const QUERIES = [
   {
-    question: 'What regions do you serve?',
+    question: 'Who is eligible for the Offline Embedded Systems course in Pune?',
     answer:
-      'We operate across North America and select international territories, providing on-site investigation and remote consultancy for major civil works.',
+      'Graduates and final-year students with BE/B.Tech/Diploma/M.Tech in E&TC, Electronics, Electrical, Computer Science, IT, Instrumentation, or working professionals looking to transition into Embedded, Automotive, and IoT domains.',
   },
   {
-    question: 'Are your labs ISO certified?',
+    question: 'Are individual hardware kits and lab equipment provided for practice?',
     answer:
-      'Yes. Our geotechnical laboratories are ISO 9001:2015 certified and follow ASTM standards for all material and soil testing procedures.',
+      'Yes. Our offline Pune lab is equipped with individual workstations containing STM32 development boards, ARM Cortex controllers, digital storage oscilloscopes (DSO), logic analyzers, and Vector CANalyzer setups.',
   },
   {
-    question: 'Do you provide on-site monitoring?',
+    question: 'How does the 100% Placement Assistance work?',
     answer:
-      'We deploy real-time geotechnical monitoring systems and field teams capable of continuous structural health and settlement tracking.',
+      'We provide dedicated placement support including 1-on-1 resume optimization, GitHub project portfolio reviews, mock technical interviews, and direct interview opportunities with over 500+ hiring partners across Pune, Bangalore, and Hyderabad.',
+  },
+  {
+    question: 'Can I attend a Free Demo Class and visit the offline lab?',
+    answer:
+      'Yes, absolutely! You can register for a free live demo class to interact directly with our mentors, experience our hands-on teaching methodology, and inspect our offline hardware lab before making any enrollment decision.',
   },
 ]
 
@@ -43,9 +48,9 @@ export function FeedbackQueries() {
     <section className="bg-background py-20">
       <div className="container-page grid gap-12 lg:grid-cols-2">
         <div>
-          <Eyebrow>Client Feedback</Eyebrow>
-          <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight sm:text-4xl">
-            Trusted By Global Leaders
+          <Eyebrow>Student Reviews</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight uppercase sm:text-4xl">
+            Success Stories From Our Alumni
           </h2>
           <div className="mt-8 space-y-5">
             {TESTIMONIALS.map((item) => (
@@ -73,24 +78,24 @@ export function FeedbackQueries() {
         </div>
 
         <div>
-          <Eyebrow>Information</Eyebrow>
+          <Eyebrow>Frequently Asked Questions</Eyebrow>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight uppercase sm:text-4xl">
-            Common Queries
+            Student FAQs
           </h2>
           <div className="mt-8 rounded-lg border border-border bg-card">
             <FaqAccordion items={QUERIES} />
           </div>
 
           <div className="mt-6 rounded-lg border border-border bg-muted p-6">
-            <h3 className="text-sm font-semibold tracking-wide uppercase">Need a specific quote?</h3>
+            <h3 className="text-sm font-semibold tracking-wide uppercase">Have more questions about batches?</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Our consultants are ready to discuss your project requirements in detail.
+              Our academic counselors are available to guide you on syllabus details and batch timings.
             </p>
             <Link
               href="/contact"
-              className="mt-4 inline-flex rounded-md bg-navy px-5 py-2.5 text-sm font-semibold text-navy-foreground transition-colors hover:bg-navy/90"
+              className="mt-4 inline-flex rounded-md bg-navy px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-navy-foreground transition-colors hover:bg-navy/90"
             >
-              Contact an Expert
+              Contact Academic Counselor
             </Link>
           </div>
         </div>

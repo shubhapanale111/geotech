@@ -18,10 +18,10 @@ export default function HomePage() {
       <SignatureProjects />
       <FeedbackQueries />
       <OrangeCta
-        title="Ready to Secure Your Structural &amp; Engineering Career?"
-        description="Explore our industry-aligned student training tracks or talk with our academic consultants."
+        title="Ready to Launch Your Career in Embedded Systems &amp; IoT?"
+        description="Join our upcoming offline batch in Pune. Get 500+ hours of hands-on hardware lab access, senior R&amp;D mentorship, and 100% placement assistance."
         primary={{ label: 'Explore All Courses', href: '/courses' }}
-        secondary={{ label: 'Apply for Admission', href: '/contact' }}
+        secondary={{ label: 'Book Free Demo Class', href: '/contact' }}
       />
     </>
   )

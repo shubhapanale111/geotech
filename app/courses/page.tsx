@@ -222,8 +222,16 @@ export default function CoursesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-navy py-16 text-navy-foreground md:py-24">
-        <div className="container-page relative z-10 text-center">
+      <section className="relative flex min-h-[460px] items-center justify-center overflow-hidden bg-navy py-16 text-navy-foreground md:min-h-[500px] md:py-24">
+        <Image
+          src="/images/firmware-coding.png"
+          alt="Hands-on Embedded Systems Firmware Coding background"
+          fill
+          priority
+          className="object-cover opacity-55"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/55 to-navy/75" />
+        <div className="container-page relative z-10 w-full text-center">
           {/* Accreditation Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             <span className="rounded bg-primary/20 px-3 py-1 text-xs font-bold text-primary uppercase">

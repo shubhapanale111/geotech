@@ -83,23 +83,26 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-navy py-16 text-navy-foreground md:py-24">
+      <section className="relative flex min-h-[460px] items-center justify-center overflow-hidden bg-navy py-16 text-navy-foreground md:min-h-[500px] md:py-24">
         <Image
-          src="/images/blueprint-desk.png"
-          alt="Blueprint header background"
+          src="/images/hands-on-wiring.png"
+          alt="Hands-on Electronics Training Lab background"
           fill
           priority
-          className="object-cover opacity-20"
+          className="object-cover opacity-55"
         />
-        <div className="container-page relative">
-          <Eyebrow tone="white">ADMISSIONS &amp; ENGINEERING HUB</Eyebrow>
-          <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight uppercase text-white sm:text-5xl md:text-6xl">
-            Get in Touch &amp; <span className="text-primary">Apply Today</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-navy-muted">
-            Whether you are a student looking to enroll in our technical courses or an enterprise
-            seeking geotechnical consultancy, our team is ready to assist you.
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/55 to-navy/75" />
+        <div className="container-page relative z-10 w-full text-center">
+          <div className="mx-auto max-w-3xl">
+            <Eyebrow tone="white">ADMISSIONS &amp; ENGINEERING HUB</Eyebrow>
+            <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight uppercase text-white sm:text-5xl md:text-6xl">
+              Get in Touch &amp; <span className="text-primary">Apply Today</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-navy-muted">
+              Connect with our admissions team to book your free demo class, visit our offline Pune
+              hardware lab, or discuss course curricula and 100% placement assistance.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import {
   Clock,
+  Cpu,
   GraduationCap,
   Mail,
   Menu,
-  Mountain,
   Phone,
   Sparkles,
   X,
@@ -78,7 +78,7 @@ export function SiteHeader() {
         <div className="container-page flex h-16 items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2.5" aria-label="Galaxia Geotech home">
             <span className="flex size-8 items-center justify-center rounded-md bg-navy text-navy-foreground">
-              <Mountain className="size-4" strokeWidth={2.2} />
+              <Cpu className="size-4 text-primary" strokeWidth={2.2} />
             </span>
             <span className="font-display text-lg font-bold tracking-tight text-foreground">
               Galaxia Geotech <span className="text-xs font-bold text-primary uppercase">Academy</span>
