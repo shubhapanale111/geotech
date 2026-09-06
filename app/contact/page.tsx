@@ -24,45 +24,45 @@ import { Eyebrow } from '@/components/primitives'
 const CONTACT_CARDS = [
   {
     icon: MapPin,
-    title: 'PUNE ACADEMY & LAB',
-    value: 'Cyber City, Magarpatta Road, Hadapsar',
-    sub: 'Pune, Maharashtra 411028',
+    title: 'PUNE TRAINING ACADEMY',
+    value: 'Shreenath Plaza, Off No. 87, C-Wing, 5th Floor',
+    sub: 'Dyaneshwar Paduka Chowk, FC Road, Pune - 411004',
   },
   {
     icon: Phone,
-    title: 'DIRECT ADMISSIONS LINE',
-    value: '+91 98765 43210 / +1 (555) 012-3456',
-    sub: 'Available Mon - Sat, 8:00 AM - 7:00 PM',
+    title: 'STUDENT HELPLINE & WHATSAPP',
+    value: '752-2929-752',
+    sub: 'Direct counseling: Mon - Sat, 8:00 AM - 8:00 PM',
   },
   {
     icon: Mail,
-    title: 'ADMISSIONS & GENERAL EMAIL',
-    value: 'admissions@galaxiageotech.com',
-    sub: 'Quick response within 2-4 hours',
+    title: 'ACMISSIONS & INQUIRY EMAIL',
+    value: 'galaxiageotech@gmail.com',
+    sub: 'Official replies within 2-4 hours',
   },
   {
     icon: Clock,
-    title: 'LAB & COUNSELING HOURS',
-    value: 'Monday \u2014 Saturday: 08:00 - 19:00',
-    sub: 'Weekend Lab Access: 10:00 - 18:00',
+    title: 'OFFLINE CLASS & LAB HOURS',
+    value: 'Monday \u2014 Saturday: 08:00 AM - 07:30 PM',
+    sub: 'Sunday Batches & Doubt Clearing: 09:00 AM - 05:00 PM',
   },
 ]
 
 const ROADMAP_STEPS = [
   {
     step: '01',
-    title: 'Submit Online Application',
-    desc: 'Fill out your basic details, qualification, and preferred training program.',
+    title: 'Submit Inquiry / Registration',
+    desc: 'Fill out your basic details, qualification, and preferred Python with GIS batch mode.',
   },
   {
     step: '02',
-    title: 'Academic Counseling & Assessment',
-    desc: 'Speak with our technical head for a 1-on-1 session to align your career goals.',
+    title: 'Free Counseling & Demo Class',
+    desc: 'Meet our senior geospatial trainers for a 1-on-1 counseling session and preview live GIS workflows.',
   },
   {
     step: '03',
-    title: 'Seat Reservation & Onboarding',
-    desc: 'Receive your admission offer, syllabus package, and lab access credentials.',
+    title: 'Batch Enrollment & Practical Training',
+    desc: 'Receive your syllabus package, datasets, and begin hands-on offline project training.',
   },
 ]
 
@@ -86,7 +86,7 @@ export default function ContactPage() {
       <section className="relative flex min-h-[460px] items-center justify-center overflow-hidden bg-navy py-16 text-navy-foreground md:min-h-[500px] md:py-24">
         <Image
           src="/images/hands-on-wiring.png"
-          alt="Hands-on Electronics Training Lab background"
+          alt="Galaxia Geotech GIS Training Lab background"
           fill
           priority
           className="object-cover opacity-55"
@@ -94,13 +94,13 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/55 to-navy/75" />
         <div className="container-page relative z-10 w-full text-center">
           <div className="mx-auto max-w-3xl">
-            <Eyebrow tone="white">ADMISSIONS &amp; ENGINEERING HUB</Eyebrow>
+            <Eyebrow tone="white">ADMISSIONS &amp; TRAINING HUB \u2014 PUNE</Eyebrow>
             <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight uppercase text-white sm:text-5xl md:text-6xl">
-              Get in Touch &amp; <span className="text-primary">Apply Today</span>
+              Get in Touch &amp; <span className="text-primary">Join Us</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-navy-muted">
               Connect with our admissions team to book your free demo class, visit our offline Pune
-              hardware lab, or discuss course curricula and 100% placement assistance.
+              computer lab on FC Road, or discuss the Python with GIS syllabus.
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function ContactPage() {
             3-STEP ADMISSION PROCESS
           </p>
           <h2 className="mt-1 text-center font-display text-2xl font-extrabold uppercase text-foreground">
-            How to Join Galaxia Geotech Academy
+            How to Join Galaxia Geotech
           </h2>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -137,12 +137,12 @@ export default function ContactPage() {
           {/* Left Column - Contact Details */}
           <div>
             <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-              Academic &amp; Corporate Center
+              Training Center &amp; Admissions
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Galaxia Geotech operates specialized training labs in Pune and consultancy hubs
-              across North America, offering world-class subsurface engineering and embedded
-              electronics education.
+              Galaxia Geotech operates a dedicated offline training facility in Pune on Fergusson
+              College Road, equipped with high-performance workstations for GIS software, Python
+              programming, and large spatial dataset processing.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -173,17 +173,17 @@ export default function ContactPage() {
             {/* Accreditation Badges */}
             <div className="mt-10 border-t border-border pt-6">
               <p className="text-[0.65rem] font-bold tracking-widest text-muted-foreground uppercase">
-                Accreditations &amp; Quality Certifications
+                Industry Oriented &amp; Practical Training
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <span className="rounded bg-muted px-4 py-2 text-xs font-bold text-muted-foreground uppercase">
-                  ISO 9001:2015 LABS
+                  100% OFFLINE PRACTICALS
                 </span>
                 <span className="rounded bg-muted px-4 py-2 text-xs font-bold text-muted-foreground uppercase">
-                  ASCE MEMBER
+                  REAL GIS DATASETS
                 </span>
                 <span className="rounded bg-muted px-4 py-2 text-xs font-bold text-muted-foreground uppercase">
-                  G-G TECH CERTIFIED
+                  CAREER &amp; RESUME SUPPORT
                 </span>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function ContactPage() {
                     : 'text-navy-muted hover:text-white'
                 }`}
               >
-                <FileText className="size-4" /> Corporate / Geotech
+                <FileText className="size-4" /> Corporate / College
               </button>
             </div>
 
@@ -224,10 +224,11 @@ export default function ContactPage() {
                     <CheckCircle2 className="size-8" />
                   </div>
                   <h3 className="mt-4 font-display text-2xl font-extrabold uppercase text-foreground">
-                    Application Submitted!
+                    Inquiry Submitted!
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                    Thank you! We have received your {inquiryType === 'student' ? 'admission application' : 'inquiry'}. Our team will contact you within 2-4 hours.
+                    Thank you! We have received your {inquiryType === 'student' ? 'admission inquiry' : 'partnership request'}. Our counselor will call you on{' '}
+                    <strong>752-2929-752</strong> within 2-4 hours.
                   </p>
                   <button
                     type="button"
@@ -243,8 +244,8 @@ export default function ContactPage() {
                     <Sparkles className="size-4 shrink-0" />
                     <span>
                       {inquiryType === 'student'
-                        ? '🔥 October 15 Batch Enrollments Open: Reserve your seat today.'
-                        : 'Technical proposals delivered within 24 hours.'}
+                        ? '🔥 Upcoming Batch Enrollments Open: Book your seat or free demo class today.'
+                        : 'Corporate GIS training and custom college workshop solutions.'}
                     </span>
                   </div>
 
@@ -256,7 +257,7 @@ export default function ContactPage() {
                       <input
                         type="text"
                         required
-                        placeholder="John Doe"
+                        placeholder="e.g. Amit Patil"
                         className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-primary"
                       />
                     </div>
@@ -267,7 +268,7 @@ export default function ContactPage() {
                       <input
                         type="email"
                         required
-                        placeholder="john@example.com"
+                        placeholder="amit@example.com"
                         className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-primary"
                       />
                     </div>
@@ -281,28 +282,29 @@ export default function ContactPage() {
                       <input
                         type="tel"
                         required
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 75229 29752"
                         className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-primary"
                       />
                     </div>
                     <div>
                       <label className="block text-xs font-bold uppercase text-foreground">
-                        {inquiryType === 'student' ? 'PROGRAM INTEREST *' : 'SERVICE REQUIRED *'}
+                        {inquiryType === 'student' ? 'PROGRAM INTEREST *' : 'REQUIREMENT TYPE *'}
                       </label>
                       <select className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-primary">
                         {inquiryType === 'student' ? (
                           <>
-                            <option>Master Embedded Systems (Pune Lab)</option>
-                            <option>Advanced IoT Systems Certification</option>
-                            <option>Automotive Embedded Systems (AUTOSAR)</option>
-                            <option>Custom Workshop / Other</option>
+                            <option>Master Python with GIS (Comprehensive)</option>
+                            <option>GIS Fundamentals &amp; QGIS Spatial Analysis</option>
+                            <option>Python for Geospatial Automation (GeoPandas)</option>
+                            <option>DEM Hydrology &amp; Terrain Modeling</option>
+                            <option>Custom Student Project Support</option>
                           </>
                         ) : (
                           <>
-                            <option>Site Investigation &amp; Boring</option>
-                            <option>Foundation Design &amp; Shoring</option>
-                            <option>Soil &amp; Rock Lab Analysis</option>
-                            <option>Peer Review / Instrumentation</option>
+                            <option>Corporate GIS Team Upskilling</option>
+                            <option>College / University Workshop</option>
+                            <option>Custom Geospatial Data Analysis</option>
+                            <option>Other Institutional Requirement</option>
                           </>
                         )}
                       </select>
@@ -313,14 +315,14 @@ export default function ContactPage() {
                     <label className="block text-xs font-bold uppercase text-foreground">
                       {inquiryType === 'student'
                         ? 'QUALIFICATION &amp; CAREER GOAL'
-                        : 'PROJECT DETAILS &amp; LOCATION'}
+                        : 'TRAINING REQUIREMENTS &amp; TIMELINE'}
                     </label>
                     <textarea
                       rows={4}
                       placeholder={
                         inquiryType === 'student'
-                          ? 'Mention your degree (B.E./B.Tech/Diploma) and what skills you want to learn...'
-                          : 'Describe your site conditions, location, and specific engineering requirements...'
+                          ? 'Mention your background (Civil, Geography, CS, Environmental, etc.) and what you want to achieve...'
+                          : 'Describe your team size, preferred batch schedule, and specific tool requirements...'
                       }
                       className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-primary"
                     />
@@ -337,7 +339,7 @@ export default function ContactPage() {
                       </>
                     ) : (
                       <>
-                        Submit {inquiryType === 'student' ? 'Admission Request' : 'Technical Inquiry'} <Send className="size-3.5" />
+                        Submit {inquiryType === 'student' ? 'Admission Inquiry' : 'Corporate Request'} <Send className="size-3.5" />
                       </>
                     )}
                   </button>
@@ -354,34 +356,36 @@ export default function ContactPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="font-display text-3xl font-extrabold tracking-tight uppercase text-foreground">
-                Find Our Facility
+                Visit Our Training Center
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Our laboratory and engineering hub is located in the heart of the industrial district.
+                Centrally located on Fergusson College (FC) Road in Pune, easily accessible by bus and metro.
               </p>
             </div>
-            <Link
-              href="#"
+            <a
+              href="https://maps.google.com/?q=Shreenath+Plaza+FC+Road+Pune"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 text-xs font-bold tracking-wider text-foreground uppercase shadow-sm hover:bg-muted"
             >
-              <FileText className="size-4" /> Download Site Access PDF
-            </Link>
+              <MapPin className="size-4 text-primary" /> Open in Google Maps
+            </a>
           </div>
 
           <div className="mt-8 relative overflow-hidden rounded-xl border border-border shadow-lg">
             <Image
               src="/images/aerial-map.png"
-              alt="Facility aerial map location"
+              alt="Galaxia Geotech Pune FC Road Location"
               width={1200}
               height={700}
               className="h-[450px] w-full object-cover"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-navy px-6 py-4 text-center text-white shadow-2xl">
               <span className="font-display text-sm font-bold uppercase text-primary">
-                Galaxia Geotech HQ &amp; Lab
+                Galaxia Geotech Training Institute
               </span>
               <p className="text-[0.65rem] tracking-wider text-navy-muted uppercase">
-                INDUSTRIAL ZONE HUB
+                SHREENATH PLAZA, C-WING, 5TH FLOOR, FC ROAD, PUNE
               </p>
             </div>
           </div>
@@ -390,3 +394,4 @@ export default function ContactPage() {
     </>
   )
 }
+

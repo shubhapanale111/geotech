@@ -1,28 +1,28 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Cpu, Layers, Radio, Wrench } from 'lucide-react'
+import { ArrowRight, Code, Compass, Database, Layers, Sparkles } from 'lucide-react'
 
 const CAPABILITIES = [
   {
-    icon: Cpu,
-    image: '/images/electronics-lab.png',
-    title: 'ARM Cortex & STM32 Firmware Lab',
+    icon: Code,
+    image: '/images/firmware-coding.png',
+    title: 'Hands-on GIS Python Training',
     description:
-      'Master bare-metal C programming, register-level peripherals (GPIO, Timer, ADC, DMA), and serial communication protocols (UART, SPI, I2C) on real STM32 microcontrollers.',
+      'Practice Python programming with real-world GIS and geospatial projects, learning vector/raster data structures, coordinate systems, and automation scripts.',
   },
   {
     icon: Layers,
-    image: '/images/hero-automotive-pcb.png',
-    title: 'Automotive ECU & AUTOSAR Protocols',
+    image: '/images/aerial-map.png',
+    title: 'Modern GIS Tools & Libraries',
     description:
-      'Hands-on ECU development with CAN/CAN-FD, LIN bus analyzers, Vector CANalyzer toolchain, CAPL scripting, and AUTOSAR layered software architecture.',
+      'Master the Python geospatial ecosystem: GeoPandas, Shapely, Fiona, Rasterio, PyProj, Matplotlib, NumPy, and Pandas for spatial joins and queries.',
   },
   {
-    icon: Radio,
-    image: '/images/hero-circuit-macro.png',
-    title: 'FreeRTOS & Industrial IoT Lab',
+    icon: Compass,
+    image: '/images/survey-tripod.png',
+    title: 'Industry Experienced Trainers',
     description:
-      'Build deterministic real-time systems using FreeRTOS kernel (tasks, queues, semaphores, mutexes) integrated with ESP32, LoRaWAN, MQTT, and AWS IoT cloud telemetry.',
+      'Learn directly from instructors with practical industry experience in remote sensing, spatial database management, terrain modeling, and cartography.',
   },
 ]
 
@@ -31,24 +31,23 @@ export function CoreCapabilities() {
     <section className="bg-white py-24">
       <div className="container-page">
         <p className="text-xs font-bold tracking-widest text-primary uppercase">
-          Hardware Lab Infrastructure
+          Key Course Highlights
         </p>
         <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl font-extrabold tracking-tight uppercase text-gray-900 sm:text-4xl">
-              Our Core Practical Labs &amp; Toolchains
+              Building Industry-Ready Geospatial Skills
             </h2>
             <p className="mt-4 text-base leading-relaxed text-gray-600">
-              Unlike theoretical coaching classes, our students spend 500+ hours working directly
-              with digital oscilloscopes, logic analyzers, development boards, and industry-standard
-              ECU diagnostic software.
+              Galaxia Geotech provides comprehensive training combining Python programming with
+              geospatial analysis, remote sensing, and automated GIS workflows.
             </p>
           </div>
           <Link
             href="/courses"
             className="inline-flex shrink-0 items-center gap-2 text-xs font-bold tracking-widest text-gray-900 hover:text-primary uppercase"
           >
-            View All Courses <ArrowRight className="size-4" />
+            View Full Curriculum <ArrowRight className="size-4" />
           </Link>
         </div>
 
@@ -62,7 +61,7 @@ export function CoreCapabilities() {
               >
                 <div className="relative h-48">
                   <Image src={item.image} alt={item.title} fill className="object-cover" />
-                  <span className="absolute top-4 left-4 flex size-10 items-center justify-center rounded bg-gray-900 text-white">
+                  <span className="absolute top-4 left-4 flex size-10 items-center justify-center rounded bg-navy text-white">
                     <Icon className="size-5 text-primary" />
                   </span>
                 </div>
@@ -75,7 +74,7 @@ export function CoreCapabilities() {
                     href="/courses"
                     className="mt-8 flex w-full items-center justify-center rounded bg-gray-50 px-4 py-3 text-xs font-bold uppercase tracking-wider text-gray-900 transition-colors hover:bg-gray-100"
                   >
-                    Explore Lab Curriculum &rarr;
+                    Explore Syllabus &rarr;
                   </Link>
                 </div>
               </article>

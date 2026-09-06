@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import { Cpu, Globe, Mail, MapPin, Phone } from 'lucide-react'
+import { Globe, Layers, Mail, MapPin, Phone } from 'lucide-react'
 import { FacebookIcon, LinkedInIcon, TwitterIcon } from '@/components/social-icons'
 
 const NAV = [
   { href: '/', label: 'Home' },
-  { href: '/courses', label: 'Embedded Courses' },
-  { href: '/about', label: 'About Us' },
-  { href: '/courses/embedded-course-pune', label: 'Embedded Systems Pune' },
-  { href: '/services/automotive-embedded', label: 'Automotive & AUTOSAR' },
-  { href: '/contact', label: 'Book Demo Class' },
+  { href: '/courses', label: 'Python with GIS Course' },
+  { href: '/services', label: 'GIS Learning Gallery' },
+  { href: '/projects', label: 'Projects & Research Ideas' },
+  { href: '/about', label: 'About Galaxia Geotech' },
+  { href: '/contact', label: 'Contact & Enrollment' },
 ]
 
 const SOCIALS = [
@@ -26,15 +26,15 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-2.5">
               <span className="flex size-8 items-center justify-center rounded-md bg-navy text-navy-foreground">
-                <Cpu className="size-4 text-primary" strokeWidth={2.2} />
+                <Layers className="size-4 text-primary" strokeWidth={2.2} />
               </span>
               <span className="font-display text-base font-bold tracking-wide text-foreground">
-                GALAXIA GEOTECH <span className="text-xs text-primary font-semibold">ACADEMY</span>
+                GALAXIA GEOTECH
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Pune&apos;s leading offline training academy for Embedded Systems, Automotive AUTOSAR,
-              and IoT. Hands-on hardware labs with 100% placement assistance.
+              Python with GIS | GIS | Remote Sensing | Geospatial Technology. Building practical
+              geospatial skills through hands-on Python programming and real-world spatial projects.
             </p>
           </div>
 
@@ -55,27 +55,31 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold tracking-wide text-foreground">TRAINING LAB</h3>
+            <h3 className="text-sm font-semibold tracking-wide text-foreground">CONTACT US</h3>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
-                <span>Geotech Tech Park, Hadapsar / FC Road, Pune, MH 411028</span>
+                <span>
+                  Shreenath Plaza, Off No. 87, C-Wing, 5th Floor, Dyaneshwar Paduka Chowk, FC Road,
+                  Pune, MH - 411004
+                </span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="size-4 shrink-0 text-primary" />
-                <span>+91 98765 43210</span>
+                <span>752-2929-752</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="size-4 shrink-0 text-primary" />
-                <span>admissions@galaxiageotech.com</span>
+                <span>galaxiageotech@gmail.com</span>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold tracking-wide text-foreground">FOLLOW US</h3>
+            <h3 className="text-sm font-semibold tracking-wide text-foreground">GEOSPATIAL HUB</h3>
             <p className="mt-4 text-xs text-muted-foreground">
-              Follow our community of 5,000+ embedded developers and student placement updates.
+              Learn Python. Master GIS. Build Real-World Geospatial Solutions with certified
+              trainers and modern GIS tools.
             </p>
             <div className="mt-4 flex items-center gap-3">
               {SOCIALS.map((social) => {
@@ -83,7 +87,7 @@ export function SiteFooter() {
                 return (
                   <a
                     key={social.label}
-                    href="#"
+                    href="https://galaxiageotech.com"
                     aria-label={social.label}
                     className="flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                   >
@@ -96,13 +100,13 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center">
-          <p>© 2026 Galaxia Geotech Academy. All rights reserved.</p>
+          <p>© 2026 Galaxia Geotech. All rights reserved. Python with GIS Training Institute.</p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="transition-colors hover:text-foreground">
-              Privacy Policy
+            <Link href="/courses" className="transition-colors hover:text-foreground">
+              Course Details
             </Link>
-            <Link href="#" className="transition-colors hover:text-foreground">
-              Terms of Service
+            <Link href="/contact" className="transition-colors hover:text-foreground">
+              Contact Us
             </Link>
           </div>
         </div>

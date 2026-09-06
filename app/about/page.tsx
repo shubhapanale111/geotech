@@ -5,95 +5,118 @@ import {
   Award,
   BarChart2,
   CheckCircle2,
-  Cpu,
+  Code,
+  Compass,
+  Database,
   Eye,
+  Globe,
   GraduationCap,
-  Hammer,
-  Laptop,
+  Layers,
   Lightbulb,
-  Radio,
+  MapPin,
   ShieldCheck,
   Sparkles,
   Target,
+  Users,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/primitives'
 
-const VALUES = [
+const WHY_CHOOSE_US = [
   {
-    icon: Cpu,
-    title: 'Practical Lab Rigor',
-    description: '500+ hours of unrestricted lab access with real oscilloscopes, logic analyzers, and STM32 boards.',
+    icon: Code,
+    title: 'Practical Training',
+    description: 'Hands-on programming with actual geospatial datasets and Python automation scripts.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Industry-Standard Toolchains',
-    description: 'Master Vector CANalyzer, FreeRTOS, STM32CubeIDE, Keil, and Linux device drivers.',
+    icon: Globe,
+    title: 'Real-World Projects',
+    description: 'Build portfolio projects like DEM drainage extraction, buffer analysis, and change detection.',
   },
   {
-    icon: Lightbulb,
-    title: 'Mentorship by Industry Experts',
-    description: 'Taught directly by working senior firmware developers and automotive ECU architects.',
+    icon: Layers,
+    title: 'Modern GIS Technologies',
+    description: 'Master industry-standard spatial tools, raster and vector processing, and map projections.',
   },
   {
-    icon: GraduationCap,
-    title: '100% Placement Commitment',
-    description: 'Dedicated 1-on-1 resume optimization, mock technical interviews, and direct hiring drives.',
+    icon: Database,
+    title: 'Python GIS Libraries',
+    description: 'Deep dive into GeoPandas, Shapely, Fiona, Rasterio, PyProj, Matplotlib, and NumPy.',
+  },
+  {
+    icon: Target,
+    title: 'Industry-Oriented Curriculum',
+    description: 'Curriculum designed to meet modern geospatial analyst and spatial data science requirements.',
+  },
+  {
+    icon: Users,
+    title: 'Experienced Instructors',
+    description: 'Learn directly from instructors with practical field and research project experience.',
+  },
+  {
+    icon: Award,
+    title: 'Recognized Certification',
+    description: 'Receive an institute-recognized Python with GIS certification upon course completion.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Project-Based Learning',
+    description: 'Solve real geographic problems and build 40+ research topics for your technical portfolio.',
   },
 ]
 
 const STEPS = [
   {
     step: '01',
-    title: 'Core Electronics & Bare-Metal C',
+    title: 'Python Programming Fundamentals',
     description:
-      'Master memory layout, pointers, data structures, register configurations, and peripheral drivers on real microcontrollers.',
+      'Master variables, data structures, conditional logic, loops, functions, file handling, and object-oriented programming.',
   },
   {
     step: '02',
-    title: 'Microcontroller Architecture & Protocols',
+    title: 'Spatial Data & Coordinate Systems',
     description:
-      'In-depth hands-on interfacing with ARM Cortex-M4, STM32, UART, SPI, I2C, and CAN communication buses.',
+      'Understand vector geometries, raster grid structures, attribute management, and Coordinate Reference Systems (CRS).',
   },
   {
     step: '03',
-    title: 'RTOS & Automotive AUTOSAR',
+    title: 'Python Geospatial Ecosystem',
     description:
-      'Design deterministic real-time systems using FreeRTOS kernel design, task scheduling, and AUTOSAR layered stacks.',
+      'Automate spatial joins, geometry manipulation, coordinate transformations, and raster masking with GeoPandas and Rasterio.',
   },
   {
     step: '04',
-    title: 'Capstone Prototyping & Placement Drives',
+    title: 'Applied Projects & Certification',
     description:
-      'Build end-to-end hardware prototypes followed by rigorous mock interview sessions and direct campus hiring drives.',
+      'Deliver real-world hydrological and spatial proximity models to earn your institute-recognized GIS certification.',
   },
 ]
 
 const EXPERTS = [
   {
-    name: 'Sarah Deshmukh',
-    role: 'LEAD EMBEDDED ARCHITECT',
+    name: 'Dr. Sarah Deshmukh',
+    role: 'LEAD GEOSPATIAL SCIENTIST',
     image: '/images/team-sarah.png',
-    bio: '15+ years of R&D experience in ARM Cortex firmware, FreeRTOS kernel design, and Linux device driver architectures.',
+    bio: 'Specialist in remote sensing image classification, spatial automation with Python, and environmental change modeling.',
   },
   {
-    name: 'David Kulkarni',
-    role: 'SENIOR AUTOMOTIVE AUTOSAR CONSULTANT',
+    name: 'Prof. David Kulkarni',
+    role: 'SENIOR GIS & HYDROLOGY CONSULTANT',
     image: '/images/team-david.png',
-    bio: 'Former Tier-1 ECU development specialist with deep expertise in CAN-FD, CAPL scripting, and ISO 26262 functional safety.',
+    bio: '15+ years of experience in hydrological modeling, DEM drainage network analysis, and geodetic reference systems.',
   },
   {
     name: 'Michael Fernandes',
-    role: 'DIRECTOR OF HARDWARE & IOT LABS',
+    role: 'SPATIAL DATA SCIENCE INSTRUCTOR',
     image: '/images/team-michael.png',
-    bio: 'Oversees our ISO-certified offline electronics lab, ensuring every student masters advanced testbenches and real microcontrollers.',
+    bio: 'Expert in Python geospatial libraries (GeoPandas, Shapely, Rasterio), spatial databases (PostGIS), and Web GIS development.',
   },
 ]
 
 const ACCREDITATIONS = [
-  { icon: Award, label: 'NASSCOM® ACCREDITED' },
-  { icon: ShieldCheck, label: 'ISO 9001:2015 CERTIFIED LAB' },
-  { icon: CheckCircle2, label: '500+ HIRING PARTNERS' },
-  { icon: CheckCircle2, label: '100% PLACEMENT SUPPORT' },
+  { icon: Award, label: 'INSTITUTE RECOGNIZED' },
+  { icon: ShieldCheck, label: 'HANDS-ON PYTHON LAB' },
+  { icon: CheckCircle2, label: '40+ RESEARCH TOPICS' },
+  { icon: CheckCircle2, label: 'FC ROAD, PUNE CENTER' },
 ]
 
 export default function AboutPage() {
@@ -103,7 +126,7 @@ export default function AboutPage() {
       <section className="relative flex min-h-[460px] items-center justify-center overflow-hidden bg-navy py-16 text-navy-foreground md:min-h-[500px] md:py-24">
         <Image
           src="/images/hero-server-room.png"
-          alt="Galaxia Geotech Offline Embedded Systems Lab background"
+          alt="Galaxia Geotech Geospatial Lab background"
           fill
           priority
           className="object-cover opacity-55"
@@ -111,14 +134,13 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/55 to-navy/75" />
         
         <div className="container-page relative z-10 w-full text-center">
-          <Eyebrow tone="white">NASSCOM® ALIGNED &amp; ISO 9001:2015 ACADEMY</Eyebrow>
+          <Eyebrow tone="white">ABOUT GALAXIA GEOTECH</Eyebrow>
           <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight uppercase text-white sm:text-5xl md:text-6xl">
-            Empowering Engineers with <span className="text-primary">Hands-on Embedded</span> Mastery
+            Building Practical <span className="text-primary">Geospatial Skills</span>
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-navy-muted">
-            At Galaxia Geotech Academy, we bridge the gap between college theory and real-world
-            engineering through rigorous offline hardware labs, automotive toolchains, and
-            dedicated placement support in Pune.
+            Galaxia Geotech provides GIS and geospatial technology learning focused on practical
+            applications, modern tools, and industry-oriented Python programming projects in Pune.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
@@ -154,9 +176,9 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-foreground">Our Mission</h3>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  To provide industry-aligned, 100% practical hardware education in Embedded Systems,
-                  Automotive AUTOSAR, and IoT, transforming fresh engineering graduates and working
-                  professionals into confident, high-performing firmware developers.
+                  To combine Python programming with spatial analysis so learners can automate
+                  complex GIS workflows, process multi-terabyte spatial datasets, and solve
+                  real-world geographic problems with technical confidence.
                 </p>
               </article>
 
@@ -168,9 +190,9 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-foreground">Our Vision</h3>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  To be India&apos;s premier offline embedded systems training academy and engineering R&amp;D
-                  talent hub, recognized globally for producing world-class embedded hardware, firmware,
-                  and automotive software architects.
+                  To be India&apos;s leading geospatial technology institute, empowering engineers,
+                  geographers, and data scientists with modern open-source GIS libraries and spatial
+                  automation capabilities.
                 </p>
               </article>
             </div>
@@ -178,17 +200,17 @@ export default function AboutPage() {
             <div className="relative">
               <div className="overflow-hidden rounded-lg border border-border shadow-md">
                 <Image
-                  src="/images/lab-cleanroom.png"
-                  alt="Embedded Systems Practical Testing Lab"
+                  src="/images/aerial-map.png"
+                  alt="Geospatial analysis workspace"
                   width={800}
                   height={600}
                   className="h-72 w-full object-cover sm:h-96"
                 />
               </div>
               <div className="mt-4 rounded-lg bg-primary p-6 text-primary-foreground shadow-lg sm:absolute sm:-bottom-6 sm:-left-6 sm:mt-0 sm:max-w-xs">
-                <p className="font-display text-3xl font-extrabold tracking-tight">4,850+</p>
+                <p className="font-display text-3xl font-extrabold tracking-tight">40+</p>
                 <p className="mt-1 text-xs font-bold tracking-wider uppercase">
-                  GRADUATES PLACED IN TOP EMBEDDED &amp; AUTOMOTIVE ENTERPRISES
+                  PRACTICAL GIS RESEARCH TOPICS &amp; WORKFLOWS COVERED
                 </p>
               </div>
             </div>
@@ -196,20 +218,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Foundational Principles */}
+      {/* Why Choose Us? (8 Features from content.md) */}
       <section className="bg-muted/50 py-20">
         <div className="container-page text-center">
-          <Eyebrow>FOUNDATIONAL PRINCIPLES</Eyebrow>
+          <Eyebrow>WHY CHOOSE US</Eyebrow>
           <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight uppercase text-foreground sm:text-4xl">
-            The Values That Guide Us
+            Why Learn Python with GIS at Galaxia Geotech?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground">
-            Our commitment to excellence is reflected in every line of code our students write and
-            every hardware circuit they test.
+            Our training is built around hands-on practice, modern spatial toolchains, and real-world
+            geospatial applications.
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {VALUES.map((item) => {
+            {WHY_CHOOSE_US.map((item) => {
               const Icon = item.icon
               return (
                 <article
@@ -234,9 +256,9 @@ export default function AboutPage() {
       <section className="bg-background py-20">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <Eyebrow>PROCESS &amp; METHODOLOGY</Eyebrow>
+            <Eyebrow>LEARNING ROADMAP</Eyebrow>
             <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight uppercase text-foreground sm:text-4xl">
-              Our 4-Step Training to Placement Roadmap
+              From Beginner to Spatial Automation Expert
             </h2>
 
             <div className="mt-8 space-y-6">
@@ -257,32 +279,32 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
               <Image
-                src="/images/electronics-lab.png"
-                alt="Electronics and microcontrollers lab"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
-              <Image
                 src="/images/firmware-coding.png"
-                alt="Firmware coding and RTOS development"
+                alt="Python coding"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
               <Image
-                src="/images/hands-on-wiring.png"
-                alt="Hands-on circuit wiring and testing"
+                src="/images/aerial-map.png"
+                alt="Aerial map analysis"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
               <Image
-                src="/images/hero-automotive-pcb.png"
-                alt="Automotive ECU testing"
+                src="/images/engineering-3d-model.png"
+                alt="DEM 3D terrain"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-48 overflow-hidden rounded-lg border border-border shadow-sm">
+              <Image
+                src="/images/survey-tripod.png"
+                alt="Survey tripod equipment"
                 fill
                 className="object-cover"
               />
@@ -291,25 +313,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Technical Leadership */}
+      {/* Faculty / Mentors */}
       <section className="bg-navy py-20 text-navy-foreground">
         <div className="container-page">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <Eyebrow tone="white">TECHNICAL LEADERSHIP</Eyebrow>
+              <Eyebrow tone="white">EXPERT MENTORSHIP</Eyebrow>
               <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight uppercase text-white sm:text-4xl">
-                The Mentors Guiding Your Career
+                Learn From Geospatial Practitioners
               </h2>
               <p className="mt-3 max-w-xl text-sm text-navy-muted">
-                Learn from seasoned industry professionals who bring real-world product design,
-                automotive toolchains, and firmware architectures directly to the classroom.
+                Our faculty brings real-world remote sensing, GIS programming, and spatial data science
+                expertise directly into the classroom.
               </p>
             </div>
             <Link
               href="/contact"
               className="inline-flex shrink-0 rounded-md border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
             >
-              Meet Our Faculty
+              Talk to an Instructor
             </Link>
           </div>
 
@@ -360,11 +382,10 @@ export default function AboutPage() {
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <h2 className="font-display text-3xl font-extrabold tracking-tight uppercase text-white sm:text-4xl">
-                  Ready to launch your Embedded &amp; IoT career?
+                  Ready to Build Your GIS Career?
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-navy-muted">
-                  Visit our Pune training center, attend a free demo session, and interact with our
-                  senior mentors to begin your journey.
+                  Learn Python, GIS and geospatial analysis through practical projects with institute-recognized certification at FC Road, Pune.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
@@ -372,13 +393,13 @@ export default function AboutPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary/90"
                 >
-                  Book Free Demo Class <ArrowRight className="size-4" />
+                  Enroll Now <ArrowRight className="size-4" />
                 </Link>
                 <Link
                   href="/courses"
                   className="inline-flex items-center rounded-md border border-white/30 bg-white/5 px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-white/10"
                 >
-                  Explore All Courses
+                  Explore Curriculum
                 </Link>
               </div>
             </div>

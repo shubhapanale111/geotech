@@ -8,10 +8,10 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Galaxia Geotech — Engineering the Foundations of Tomorrow',
+  title: 'Galaxia Geotech — Python with GIS & Geospatial Technology Institute (Pune)',
   description:
-    'Galaxia Geotech delivers high-precision geotechnical consultancy and civil engineering — from site investigation and soil analysis to foundation design and technical training.',
-  generator: 'v0.app',
+    'Galaxia Geotech offers offline hands-on Python with GIS training in Pune (FC Road). Master Spatial Analysis, QGIS, GeoPandas, Remote Sensing, and DEM Hydrology with practical projects.',
+  generator: 'Galaxia Geotech',
 }
 
 export const viewport: Viewport = {

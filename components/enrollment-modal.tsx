@@ -10,10 +10,11 @@ export type EnrollmentModalProps = {
 }
 
 const COURSES_OPTIONS = [
-  'Master Embedded Systems (Pune Lab)',
-  'Advanced IoT Systems Certification',
-  'Automotive Embedded Systems (AUTOSAR)',
-  'Custom Corporate / Student Workshop',
+  'Python with GIS (Full Comprehensive Program)',
+  'GIS Fundamentals & Spatial Analysis (QGIS/ArcGIS)',
+  'Python for Geospatial Automation (GeoPandas & Rasterio)',
+  'DEM Hydrology & Terrain Modeling Masterclass',
+  'Custom Academic & Capstone GIS Project Support',
 ]
 
 export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentModalProps) {
@@ -22,7 +23,7 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [qualification, setQualification] = useState('')
-  const [preferredBatch, setPreferredBatch] = useState('Weekday Batch')
+  const [preferredBatch, setPreferredBatch] = useState('Offline Classroom (FC Road Pune)')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [appId, setAppId] = useState('')
@@ -37,8 +38,8 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
     setTimeout(() => {
       setIsSubmitting(false)
       setIsSuccess(true)
-      setAppId(`GGW-${Math.floor(100000 + Math.random() * 900000)}`)
-    }, 1200)
+      setAppId(`GIS-${Math.floor(100000 + Math.random() * 900000)}`)
+    }, 1000)
   }
 
   const handleReset = () => {
@@ -62,10 +63,10 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
             </span>
             <div>
               <h3 className="font-display text-base font-bold uppercase text-white">
-                Student Admission Application
+                Python with GIS Admission &amp; Demo
               </h3>
               <p className="text-[0.65rem] tracking-wider text-navy-muted uppercase">
-                Galaxia Geotech Technical Academy
+                Galaxia Geotech \u2014 Pune FC Road Center
               </p>
             </div>
           </div>
@@ -86,24 +87,24 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
                 <CheckCircle2 className="size-8" />
               </div>
               <h4 className="mt-4 font-display text-2xl font-extrabold text-foreground uppercase">
-                Application Submitted!
+                Application Received!
               </h4>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Thank you <strong className="text-foreground">{fullName}</strong>. Your admission
-                application has been registered successfully.
+                Thank you <strong className="text-foreground">{fullName}</strong>. Your registration for{' '}
+                <strong className="text-foreground">{course}</strong> has been received.
               </p>
 
               <div className="mx-auto mt-5 max-w-xs rounded-lg border border-border bg-muted p-3 text-center">
                 <p className="text-[0.65rem] font-bold text-muted-foreground uppercase">
-                  APPLICATION REFERENCE ID
+                  REGISTRATION REFERENCE ID
                 </p>
                 <p className="font-display text-lg font-extrabold text-primary">{appId}</p>
               </div>
 
               <p className="mt-4 text-xs text-muted-foreground">
-                Our academic counselor will reach out to you via call/WhatsApp within{' '}
-                <strong className="text-foreground">2 to 4 business hours</strong> to confirm batch
-                timings and seat reservation.
+                Our counselor will call or WhatsApp you directly from{' '}
+                <strong className="text-foreground">752-2929-752</strong> within 2-4 hours to schedule
+                your free demo class at our FC Road center.
               </p>
 
               <button
@@ -111,7 +112,7 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
                 onClick={handleReset}
                 className="mt-6 rounded-md bg-navy px-6 py-2.5 text-xs font-bold tracking-wider text-navy-foreground uppercase transition-colors hover:bg-navy/90"
               >
-                Close &amp; Return
+                Close Window
               </button>
             </div>
           ) : (
@@ -119,8 +120,7 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
               <div className="flex items-center gap-2 rounded-md bg-primary/10 p-3 text-xs text-primary">
                 <Sparkles className="size-4 shrink-0" />
                 <span>
-                  🔥 <strong>Limited Seats:</strong> Apply now to reserve your seat for the upcoming
-                  October 15 batch.
+                  🔥 <strong>100% Practical Training:</strong> Real datasets, Python scripts, and offline lab guidance.
                 </span>
               </div>
 
@@ -151,7 +151,7 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
                     required
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Rahul Sharma"
+                    placeholder="e.g. Rahul Patil"
                     className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-xs outline-none focus:border-primary"
                   />
                 </div>
@@ -180,19 +180,19 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 75229 29752"
                     className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-xs outline-none focus:border-primary"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-bold uppercase text-foreground">
-                    Qualification / Degree
+                    Qualification / Background
                   </label>
                   <input
                     type="text"
                     value={qualification}
                     onChange={(e) => setQualification(e.target.value)}
-                    placeholder="B.E. / B.Tech / Diploma"
+                    placeholder="Civil / Geo / CS / Env / Other"
                     className="mt-1 w-full rounded-md border border-border bg-background px-3 py-2 text-xs outline-none focus:border-primary"
                   />
                 </div>
@@ -200,12 +200,12 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
 
               <div>
                 <label className="block text-xs font-bold uppercase text-foreground">
-                  Preferred Batch Timing
+                  Preferred Learning Mode
                 </label>
                 <div className="mt-1 grid grid-cols-2 gap-2 text-xs">
                   <label
                     className={`flex cursor-pointer items-center justify-center rounded-md border p-2 text-center font-bold ${
-                      preferredBatch === 'Weekday Batch'
+                      preferredBatch === 'Offline Classroom (FC Road Pune)'
                         ? 'border-primary bg-primary/10 text-primary'
                         : 'border-border bg-background text-muted-foreground'
                     }`}
@@ -213,16 +213,16 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
                     <input
                       type="radio"
                       name="batch"
-                      value="Weekday Batch"
-                      checked={preferredBatch === 'Weekday Batch'}
-                      onChange={() => setPreferredBatch('Weekday Batch')}
+                      value="Offline Classroom (FC Road Pune)"
+                      checked={preferredBatch === 'Offline Classroom (FC Road Pune)'}
+                      onChange={() => setPreferredBatch('Offline Classroom (FC Road Pune)')}
                       className="sr-only"
                     />
-                    Weekday (Mon - Fri)
+                    Offline (FC Road Pune)
                   </label>
                   <label
                     className={`flex cursor-pointer items-center justify-center rounded-md border p-2 text-center font-bold ${
-                      preferredBatch === 'Weekend Batch'
+                      preferredBatch === 'Online Interactive Batch'
                         ? 'border-primary bg-primary/10 text-primary'
                         : 'border-border bg-background text-muted-foreground'
                     }`}
@@ -230,12 +230,12 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
                     <input
                       type="radio"
                       name="batch"
-                      value="Weekend Batch"
-                      checked={preferredBatch === 'Weekend Batch'}
-                      onChange={() => setPreferredBatch('Weekend Batch')}
+                      value="Online Interactive Batch"
+                      checked={preferredBatch === 'Online Interactive Batch'}
+                      onChange={() => setPreferredBatch('Online Interactive Batch')}
                       className="sr-only"
                     />
-                    Weekend (Sat - Sun)
+                    Online Live Batch
                   </label>
                 </div>
               </div>
@@ -248,10 +248,10 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="size-4 animate-spin" /> Processing Application...
+                      <Loader2 className="size-4 animate-spin" /> Submitting Request...
                     </>
                   ) : (
-                    'Submit Admission Application'
+                    'Register for Demo / Admission'
                   )}
                 </button>
               </div>
@@ -262,3 +262,4 @@ export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentMo
     </div>
   )
 }
+

@@ -6,40 +6,40 @@ import { FaqAccordion } from '@/components/faq-accordion'
 const TESTIMONIALS = [
   {
     quote:
-      'The offline hardware lab in Pune gave me hands-on confidence with ARM Cortex and CAN protocols that college never provided. Secured an Embedded Firmware Engineer role at Bosch with 8.5 LPA within 2 weeks of finishing!',
-    name: 'Rohan Deshmukh',
-    role: 'Embedded Firmware Engineer, Bosch',
-    initials: 'RD',
+      'Learning Python with GIS at Galaxia Geotech transformed my career. Automating raster workflows with Rasterio and vector operations with GeoPandas saved hundreds of hours in my geospatial consulting work.',
+    name: 'Anjali Sharma',
+    role: 'GIS Analyst, Geospatial Solutions',
+    initials: 'AS',
   },
   {
     quote:
-      'The AUTOSAR and Vector CANalyzer practicals were game changers for me. Mentors are senior developers who explain real ECU architectures with live debugging. Best decision for my automotive career.',
-    name: 'Pooja Kulkarni',
-    role: 'Automotive ECU Developer, Continental',
-    initials: 'PK',
+      'The hands-on hydrological processing module on DEM drainage extraction and buffer analysis was exceptionally clear. Instructors have real industry experience and provide personalized feedback on projects.',
+    name: 'Vikram Joshi',
+    role: 'Spatial Data Scientist, Urban Mapping',
+    initials: 'VJ',
   },
 ]
 
 const QUERIES = [
   {
-    question: 'Who is eligible for the Offline Embedded Systems course in Pune?',
+    question: 'What are the prerequisites for learning Python with GIS?',
     answer:
-      'Graduates and final-year students with BE/B.Tech/Diploma/M.Tech in E&TC, Electronics, Electrical, Computer Science, IT, Instrumentation, or working professionals looking to transition into Embedded, Automotive, and IoT domains.',
+      'Basic computer fundamentals. Prior experience in Python or GIS software (like QGIS/ArcGIS) is helpful but not mandatory, as the course begins with core Python programming fundamentals before advancing to spatial libraries.',
   },
   {
-    question: 'Are individual hardware kits and lab equipment provided for practice?',
+    question: 'Which Python geospatial libraries are taught in the course?',
     answer:
-      'Yes. Our offline Pune lab is equipped with individual workstations containing STM32 development boards, ARM Cortex controllers, digital storage oscilloscopes (DSO), logic analyzers, and Vector CANalyzer setups.',
+      'You will master the modern Python GIS ecosystem including GeoPandas, Shapely, Fiona, Rasterio, PyProj, Matplotlib, NumPy, and Pandas for spatial data processing, coordinate transformations, and spatial joins.',
   },
   {
-    question: 'How does the 100% Placement Assistance work?',
+    question: 'Do I receive a certificate upon completion?',
     answer:
-      'We provide dedicated placement support including 1-on-1 resume optimization, GitHub project portfolio reviews, mock technical interviews, and direct interview opportunities with over 500+ hiring partners across Pune, Bangalore, and Hyderabad.',
+      'Yes. Upon completing the course modules and practical capstone projects, you receive an institute-recognized certification in Python with GIS from Galaxia Geotech.',
   },
   {
-    question: 'Can I attend a Free Demo Class and visit the offline lab?',
+    question: 'Can I attend a Free Demo Class before enrolling?',
     answer:
-      'Yes, absolutely! You can register for a free live demo class to interact directly with our mentors, experience our hands-on teaching methodology, and inspect our offline hardware lab before making any enrollment decision.',
+      'Yes, absolutely! You can register for a free live demo session to interact with our instructors, review the syllabus, and experience our hands-on teaching methodology.',
   },
 ]
 
@@ -48,9 +48,9 @@ export function FeedbackQueries() {
     <section className="bg-background py-20">
       <div className="container-page grid gap-12 lg:grid-cols-2">
         <div>
-          <Eyebrow>Student Reviews</Eyebrow>
+          <Eyebrow>Student Feedback</Eyebrow>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight uppercase sm:text-4xl">
-            Success Stories From Our Alumni
+            Success Stories From Our Learners
           </h2>
           <div className="mt-8 space-y-5">
             {TESTIMONIALS.map((item) => (
@@ -78,18 +78,18 @@ export function FeedbackQueries() {
         </div>
 
         <div>
-          <Eyebrow>Frequently Asked Questions</Eyebrow>
+          <Eyebrow>Information</Eyebrow>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight uppercase sm:text-4xl">
-            Student FAQs
+            Frequently Asked Questions
           </h2>
           <div className="mt-8 rounded-lg border border-border bg-card">
             <FaqAccordion items={QUERIES} />
           </div>
 
           <div className="mt-6 rounded-lg border border-border bg-muted p-6">
-            <h3 className="text-sm font-semibold tracking-wide uppercase">Have more questions about batches?</h3>
+            <h3 className="text-sm font-semibold tracking-wide uppercase">Have questions about upcoming batches?</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Our academic counselors are available to guide you on syllabus details and batch timings.
+              Our academic counselors are available to guide you on syllabus details and batch timings at FC Road, Pune.
             </p>
             <Link
               href="/contact"

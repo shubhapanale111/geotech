@@ -8,16 +8,15 @@ import {
   Award,
   CheckCircle2,
   Clock,
-  Cpu,
+  Code,
+  Compass,
+  Database,
+  Globe,
   GraduationCap,
-  HelpCircle,
-  Laptop,
+  Layers,
   MapPin,
-  ShieldCheck,
   Sparkles,
-  Star,
   TrendingUp,
-  Users,
   XCircle,
   Zap,
 } from 'lucide-react'
@@ -26,136 +25,109 @@ import { EnrollmentModal } from '@/components/enrollment-modal'
 
 const FEATURED_COURSES = [
   {
-    href: '/courses/embedded-course-pune',
-    badge: 'Pune Premier Lab',
+    href: '/courses',
+    badge: 'Flagship Program',
+    rating: '4.9 ⭐ (320+ Reviews)',
+    title: 'Python with GIS Master Program',
+    description:
+      'Python fundamentals, GeoPandas, Shapely, Fiona, Rasterio, PyProj, spatial data processing, geometry operations, spatial joins, and GIS workflow automation.',
+    image: '/images/firmware-coding.png',
+    duration: '3 Months',
+    location: 'FC Road, Pune / Hybrid',
+    placement: '100% Practical Projects',
+    seats: 'Batches Enrolling',
+  },
+  {
+    href: '/services',
+    badge: 'Spatial Analysis Track',
     rating: '4.9 ⭐ (210+ Reviews)',
-    title: 'Master Embedded Systems & RTOS',
+    title: 'DEM Drainage & Hydrological Modeling',
     description:
-      'Firmware workflows, ARM Cortex MCUs, FreeRTOS kernel design, C/C++ optimization, and hardware-software co-design in Pune.',
-    image: '/images/electronics-lab.png',
-    duration: '6 Months',
-    location: 'Pune Lab (Hadapsar)',
-    placement: '100% Job Support',
-    seats: 'Only 4 Seats Left',
+      'Fill sinks, flow direction, flow accumulation, stream definition, stream linking, and automated watershed delineation from Digital Elevation Models.',
+    image: '/images/engineering-3d-model.png',
+    duration: '60 Hours',
+    location: 'Hands-on Labs',
+    placement: 'Live Project Portfolio',
+    seats: 'Weekend & Weekday',
   },
   {
-    href: '/services/automotive-embedded',
-    badge: 'Specialized R&D Track',
-    rating: '4.9 ⭐ (150+ Reviews)',
-    title: 'Automotive Embedded & AUTOSAR',
+    href: '/projects',
+    badge: 'Geospatial Research Track',
+    rating: '4.9 ⭐ (190+ Reviews)',
+    title: 'Remote Sensing & Buffer Analysis',
     description:
-      'ECU architecture, CAN/CAN-FD/LIN bus protocols, AUTOSAR software layers, Vector CANalyzer labs, and ISO 26262 functional safety.',
-    image: '/images/hero-automotive-pcb.png',
-    duration: '240 Hours',
-    location: 'On-site / Hybrid',
-    placement: 'Top Tier-1 R&D',
-    seats: 'Enrollment Open',
-  },
-  {
-    href: '/courses/advanced-iot-training',
-    badge: 'Industrial IoT Certification',
-    rating: '4.9 ⭐ (180+ Reviews)',
-    title: 'Advanced Industrial IoT Systems',
-    description:
-      'Edge computing, LoRaWAN mesh networks, secure boot, AWS IoT Greengrass, Azure IoT Hub, and live telemetry dashboards.',
-    image: '/images/hero-circuit-macro.png',
-    duration: '12 Weeks',
-    location: 'Hybrid / Remote',
-    placement: '98% Placement Rate',
-    seats: 'Oct 15 Cohort',
+      'Point/Line/Polygon buffer analysis, multi-temporal satellite imagery change detection, map projections (UTM/Mercator), and orthometric vs ellipsoidal heights.',
+    image: '/images/aerial-map.png',
+    duration: '8 Weeks',
+    location: 'Pune Center / Online',
+    placement: 'Institute Certification',
+    seats: 'Open Now',
   },
 ]
 
 const ACADEMY_STATS = [
-  { value: '4,850+', label: 'GRADUATES PLACED' },
-  { value: '98.4%', label: 'PLACEMENT RATE' },
-  { value: '50+', label: 'GLOBAL HIRING PARTNERS' },
-  { value: '₹27.5 LPA', label: 'HIGHEST PACKAGE' },
+  { value: '4 Modules', label: 'COMPREHENSIVE CURRICULUM' },
+  { value: '40+', label: 'GIS RESEARCH IDEAS' },
+  { value: '100%', label: 'PRACTICAL PROJECT WORK' },
+  { value: 'Certified', label: 'INSTITUTE RECOGNITION' },
 ]
 
 const COMPARISON = [
   {
-    feature: 'Practical Hardware Lab Time',
-    us: '500+ Hours Unlimited Oscilloscope & Board Access',
-    others: 'Strict 1-2 Hours/day batch limit',
+    feature: 'Practical GIS Python Libraries',
+    us: 'Hands-on GeoPandas, Shapely, Fiona, Rasterio & PyProj',
+    others: 'Manual GUI clicking without programming automation',
   },
   {
-    feature: 'Automotive & ECU Toolchains',
-    us: 'Vector CANalyzer, CAPL, STM32 & AUTOSAR',
-    others: 'Legacy 8051 / PIC microcontrollers only',
+    feature: 'Hydrological & DEM Workflows',
+    us: 'Complete DEM drainage network extraction & watershed modeling',
+    others: 'Basic theoretical overview of elevation data',
   },
   {
-    feature: 'Curriculum Accreditation',
-    us: 'NASSCOM® Aligned & ISO 9001:2015 Certified',
-    others: 'Unverified local institute certificates',
+    feature: 'Map Projections & Geodetic Heights',
+    us: 'In-depth Orthometric (H), Ellipsoidal (h) & Geoid (N) relationship',
+    others: 'Simplified map reading without coordinate transformation math',
   },
   {
-    feature: 'Placement Assistance & Interviews',
-    us: 'Dedicated 1-on-1 Mock Technical Interviews & Direct Drives',
-    others: 'Generic resume forward without prep',
+    feature: 'Real-World Project Portfolio',
+    us: 'Hospital buffers, flood risk mapping, and land-use change detection',
+    others: 'Generic sample files with no real-world portfolio value',
   },
 ]
 
 export function StudentPrograms() {
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null)
 
-  // Live Timer State
-  const [timeLeft, setTimeLeft] = useState({ days: 3, hours: 14, mins: 22, secs: 45 })
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.secs > 0) return { ...prev, secs: prev.secs - 1 }
-        if (prev.mins > 0) return { ...prev, mins: 59, secs: 59 }
-        if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, mins: 59, secs: 59 }
-        if (prev.days > 0) return { ...prev, days: prev.days - 1, hours: 23, mins: 59, secs: 59 }
-        return prev
-      })
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <>
       <section className="bg-muted/40 py-24 text-foreground">
         <div className="container-page">
-          {/* Header & Live Batch Timer Bar */}
+          {/* Header & Badges */}
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1 text-xs font-bold text-primary uppercase">
-                🏅 NASSCOM® Aligned &amp; ISO 9001:2015 Certified Academy
+                🗺️ Turn Geospatial Data Into Real-World Solutions
               </div>
               <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight uppercase text-foreground sm:text-4xl">
-                Featured Student Programs
+                Why Learn Python with GIS?
               </h2>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Industry-aligned technical courses with hands-on hardware labs, expert mentorship from
-                senior R&amp;D developers, and direct job placement assistance.
+                Python makes GIS workflows faster, repeatable, and scalable. Master spatial data
+                automation, raster and vector analysis, and build reproducible GIS workflows.
               </p>
             </div>
 
-            {/* Live Batch Countdown Box */}
+            {/* Quick Location & Contact Box */}
             <div className="rounded-xl border border-border bg-card p-4 shadow-sm text-center">
               <p className="text-[0.65rem] font-bold tracking-widest text-primary uppercase flex items-center justify-center gap-1">
-                <Zap className="size-3 fill-current" /> NEXT PUNE BATCH STARTS IN
+                <MapPin className="size-3 text-primary" /> GALAXIA GEOTECH PUNE
               </p>
-              <div className="mt-2 flex items-center justify-center gap-2 font-display text-lg font-extrabold text-foreground">
-                <div className="rounded bg-navy px-2 py-1 text-white">
-                  {String(timeLeft.days).padStart(2, '0')}<span className="text-[0.6rem] block font-sans font-normal text-navy-muted">DAYS</span>
-                </div>
-                <span>:</span>
-                <div className="rounded bg-navy px-2 py-1 text-white">
-                  {String(timeLeft.hours).padStart(2, '0')}<span className="text-[0.6rem] block font-sans font-normal text-navy-muted">HRS</span>
-                </div>
-                <span>:</span>
-                <div className="rounded bg-navy px-2 py-1 text-white">
-                  {String(timeLeft.mins).padStart(2, '0')}<span className="text-[0.6rem] block font-sans font-normal text-navy-muted">MIN</span>
-                </div>
-                <span>:</span>
-                <div className="rounded bg-primary px-2 py-1 text-primary-foreground">
-                  {String(timeLeft.secs).padStart(2, '0')}<span className="text-[0.6rem] block font-sans font-normal text-primary-foreground/80">SEC</span>
-                </div>
-              </div>
+              <p className="mt-1 font-display text-sm font-extrabold text-foreground">
+                Fergusson College Road Center
+              </p>
+              <p className="text-[0.7rem] text-muted-foreground">
+                Helpline: <a href="tel:7522929752" className="text-primary font-bold">752-2929-752</a>
+              </p>
             </div>
           </div>
 
@@ -175,7 +147,7 @@ export function StudentPrograms() {
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {FEATURED_COURSES.map((course) => (
               <article
-                key={course.href}
+                key={course.title}
                 className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card text-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative h-52 w-full">
@@ -197,7 +169,7 @@ export function StudentPrograms() {
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span className="font-bold text-amber-500">{course.rating}</span>
                     <span className="flex items-center gap-1">
-                      <MapPin className="size-3.5 text-primary" /> {course.location}
+                      <Clock className="size-3.5 text-primary" /> {course.duration}
                     </span>
                   </div>
 
@@ -216,7 +188,7 @@ export function StudentPrograms() {
                       href={course.href}
                       className="font-bold text-foreground uppercase hover:text-primary"
                     >
-                      Syllabus &rarr;
+                      Curriculum &rarr;
                     </Link>
                   </div>
 
@@ -233,7 +205,7 @@ export function StudentPrograms() {
                       onClick={() => setSelectedCourse(course.title)}
                       className="flex items-center justify-center gap-1.5 rounded-md bg-primary py-2.5 text-xs font-bold tracking-wider text-primary-foreground uppercase shadow transition-colors hover:bg-primary/90"
                     >
-                      <GraduationCap className="size-4" /> Apply Now
+                      <GraduationCap className="size-4" /> Enroll Now
                     </button>
                   </div>
                 </div>
@@ -241,15 +213,15 @@ export function StudentPrograms() {
             ))}
           </div>
 
-          {/* Why Galaxia Geotech Academy Beats Traditional Institutes (Comparison Matrix) */}
+          {/* Comparison Matrix */}
           <div className="mt-20 overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
             <div className="bg-navy p-6 text-navy-foreground text-center">
-              <Eyebrow tone="white">THE UNFAIR ADVANTAGE</Eyebrow>
+              <Eyebrow tone="white">THE GEOSPATIAL ADVANTAGE</Eyebrow>
               <h3 className="mt-1 font-display text-2xl font-extrabold uppercase text-white">
-                Why Galaxia Geotech Academy vs Traditional Institutes
+                Why Python with GIS at Galaxia Geotech
               </h3>
               <p className="mt-1 text-xs text-navy-muted">
-                Compare our hands-on engineering lab standards with conventional training centers.
+                Compare practical GIS programming automation with conventional static map training.
               </p>
             </div>
 

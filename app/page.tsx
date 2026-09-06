@@ -18,10 +18,10 @@ export default function HomePage() {
       <SignatureProjects />
       <FeedbackQueries />
       <OrangeCta
-        title="Ready to Launch Your Career in Embedded Systems &amp; IoT?"
-        description="Join our upcoming offline batch in Pune. Get 500+ hours of hands-on hardware lab access, senior R&amp;D mentorship, and 100% placement assistance."
-        primary={{ label: 'Explore All Courses', href: '/courses' }}
-        secondary={{ label: 'Book Free Demo Class', href: '/contact' }}
+        title="Ready to Build Your GIS Career?"
+        description="Learn Python, GIS and geospatial analysis through practical projects with institute-recognized certification."
+        primary={{ label: 'Enroll in Python with GIS →', href: '/contact' }}
+        secondary={{ label: 'Talk to an Instructor', href: '/contact' }}
       />
     </>
   )

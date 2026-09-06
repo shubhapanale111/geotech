@@ -5,9 +5,11 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import {
   Clock,
-  Cpu,
+  Globe,
   GraduationCap,
+  Layers,
   Mail,
+  MapPin,
   Menu,
   Phone,
   Sparkles,
@@ -19,9 +21,9 @@ import { EnrollmentModal } from '@/components/enrollment-modal'
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/courses', label: 'Courses', isHot: true },
-  { href: '/services', label: 'Services' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/about', label: 'About' },
+  { href: '/services', label: 'GIS Learning' },
+  { href: '/projects', label: 'Projects & Research' },
+  { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -46,25 +48,25 @@ export function SiteHeader() {
         <div className="container-page flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-1 rounded bg-primary/20 px-2 py-0.5 font-bold text-primary uppercase">
-              🏅 NASSCOM® Aligned &amp; ISO 9001 Labs
+              🗺️ Python with GIS &amp; Geospatial Technology
             </span>
             <span className="hidden md:inline-block text-navy-muted">|</span>
             <span className="hidden md:inline-flex items-center gap-1 text-white">
-              <Clock className="size-3 text-primary" /> Next Pune Batch: Oct 15 (Only 4 Seats Left)
+              <MapPin className="size-3 text-primary" /> FC Road, Pune Center
             </span>
           </div>
 
           <div className="flex items-center gap-4 text-xs font-semibold">
             <a
-              href="tel:+919876543210"
+              href="tel:7522929752"
               className="inline-flex items-center gap-1 text-white hover:text-primary transition-colors"
             >
-              <Phone className="size-3 text-primary" /> +91 98765 43210
+              <Phone className="size-3 text-primary" /> 752-2929-752
             </a>
             <span className="text-white/20">|</span>
             <button
               type="button"
-              onClick={() => handleOpenDemoModal('Free Demo Class Registration')}
+              onClick={() => handleOpenDemoModal('Python with GIS Course')}
               className="inline-flex items-center gap-1 font-bold text-primary hover:underline uppercase"
             >
               <Sparkles className="size-3" /> Book Free Demo Class &rarr;
@@ -78,10 +80,10 @@ export function SiteHeader() {
         <div className="container-page flex h-16 items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2.5" aria-label="Galaxia Geotech home">
             <span className="flex size-8 items-center justify-center rounded-md bg-navy text-navy-foreground">
-              <Cpu className="size-4 text-primary" strokeWidth={2.2} />
+              <Layers className="size-4 text-primary" strokeWidth={2.2} />
             </span>
             <span className="font-display text-lg font-bold tracking-tight text-foreground">
-              Galaxia Geotech <span className="text-xs font-bold text-primary uppercase">Academy</span>
+              Galaxia Geotech <span className="text-xs font-bold text-primary uppercase">GIS</span>
             </span>
           </Link>
 
@@ -117,10 +119,10 @@ export function SiteHeader() {
 
             <button
               type="button"
-              onClick={() => handleOpenDemoModal('Master Embedded Systems')}
+              onClick={() => handleOpenDemoModal('Python with GIS Course')}
               className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow transition-colors hover:bg-primary/90"
             >
-              <GraduationCap className="size-4" /> Apply Now
+              <GraduationCap className="size-4" /> Enroll Now
             </button>
 
             <button
@@ -153,7 +155,7 @@ export function SiteHeader() {
                   <span>{link.label}</span>
                   {link.isHot && (
                     <span className="rounded bg-primary/10 px-2 py-0.5 text-[0.65rem] font-bold text-primary uppercase">
-                      Programs
+                      Featured
                     </span>
                   )}
                 </Link>
@@ -173,11 +175,11 @@ export function SiteHeader() {
                   type="button"
                   onClick={() => {
                     setOpen(false)
-                    handleOpenDemoModal('Master Embedded Systems')
+                    handleOpenDemoModal('Python with GIS Course')
                   }}
                   className="inline-flex items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-2.5 text-center text-xs font-bold uppercase text-primary-foreground"
                 >
-                  <GraduationCap className="size-4" /> Apply Now
+                  <GraduationCap className="size-4" /> Enroll Now
                 </button>
               </div>
             </nav>
