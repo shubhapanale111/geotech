@@ -4,6 +4,7 @@ import { CoreCapabilities } from '@/components/home/core-capabilities'
 import { StabilityProcess } from '@/components/home/stability-process'
 import { IndustriesServed } from '@/components/home/industries-served'
 import { SignatureProjects } from '@/components/home/signature-projects'
+import { StudentTestimonialsCarousel } from '@/components/home/student-testimonials-carousel'
 import { FeedbackQueries } from '@/components/home/feedback-queries'
 import { OrangeCta } from '@/components/orange-cta'
 
@@ -16,6 +17,7 @@ export default function HomePage() {
       <StabilityProcess />
       <IndustriesServed />
       <SignatureProjects />
+      <StudentTestimonialsCarousel />
       <FeedbackQueries />
       <OrangeCta
         title="Ready to Build Your GIS Career?"

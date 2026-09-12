@@ -1,83 +1,120 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowRight, Code, Compass, Database, Layers, Sparkles } from 'lucide-react'
+import {
+  ArrowRight,
+  BarChart3,
+  CheckCircle2,
+  Code,
+  Compass,
+  FileCheck,
+  Globe,
+  GraduationCap,
+  Layers,
+  MapPin,
+  Radio,
+  Satellite,
+  ShieldCheck,
+  Sparkles,
+} from 'lucide-react'
+import { Eyebrow } from '@/components/primitives'
 
-const CAPABILITIES = [
-  {
-    icon: Code,
-    image: '/images/firmware-coding.png',
-    title: 'Hands-on GIS Python Training',
-    description:
-      'Practice Python programming with real-world GIS and geospatial projects, learning vector/raster data structures, coordinate systems, and automation scripts.',
-  },
+const INSTITUTE_SERVICES = [
   {
     icon: Layers,
-    image: '/images/aerial-map.png',
-    title: 'Modern GIS Tools & Libraries',
-    description:
-      'Master the Python geospatial ecosystem: GeoPandas, Shapely, Fiona, Rasterio, PyProj, Matplotlib, NumPy, and Pandas for spatial joins and queries.',
+    title: 'GIS Training (Beginner to Advanced)',
+    desc: 'Structured curriculum covering spatial data models, vector geometries, raster grids, CRS coordinate projections, and spatial querying.',
+  },
+  {
+    icon: Satellite,
+    title: 'Remote Sensing & Satellite Analysis',
+    desc: 'Digital image processing, multi-spectral band mathematics, NDVI/NDWI, land-use classification, and multi-temporal change detection.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Geospatial Data Visualization & Mapping',
+    desc: 'Thematic cartography, 3D terrain visualization, web map publishing, print composer layouts, and spatial dashboards.',
+  },
+  {
+    icon: Code,
+    title: 'Python & GIS Programming',
+    desc: 'Automating vector and raster workflows with GeoPandas, Shapely, Fiona, Rasterio, and PyProj for scalable data pipelines.',
   },
   {
     icon: Compass,
-    image: '/images/survey-tripod.png',
-    title: 'Industry Experienced Trainers',
-    description:
-      'Learn directly from instructors with practical industry experience in remote sensing, spatial database management, terrain modeling, and cartography.',
+    title: 'GPS & Field Survey Techniques',
+    desc: 'Hands-on training with handheld GPS, Differential GPS (DGPS), total station data integration, and topographic ground truthing.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Project Guidance & Internship Support',
+    desc: '1-on-1 mentorship on live capstone projects, academic thesis guidance, and internship opportunities on municipal & river datasets.',
+  },
+  {
+    icon: FileCheck,
+    title: 'Job Assessment & Career Guidance',
+    desc: 'Resume preparation, GitHub portfolio review, GIS technical mock interviews, and direct referrals to hiring partners in Maharashtra.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Job-Oriented Certification Courses',
+    desc: 'ISO 9001:2015 accredited certifications that enhance your professional credibility with engineering consultancies and tech firms.',
   },
 ]
 
 export function CoreCapabilities() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-card py-20 border-b border-border">
       <div className="container-page">
-        <p className="text-xs font-bold tracking-widest text-primary uppercase">
-          Key Course Highlights
-        </p>
-        <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-3xl font-extrabold tracking-tight uppercase text-gray-900 sm:text-4xl">
-              Building Industry-Ready Geospatial Skills
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <div className="flex items-center gap-2">
+              <Eyebrow>OUR SERVICES &amp; OFFERINGS</Eyebrow>
+              <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.7rem] font-bold text-primary">
+                <Sparkles className="size-3" /> ISO 9001:2015 Certified
+              </span>
+            </div>
+            <h2 className="mt-2 font-display text-3xl font-extrabold tracking-tight uppercase sm:text-4xl text-foreground">
+              What Our <span className="text-primary">Institute Provides</span>
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-gray-600">
-              Galaxia Geotech provides comprehensive training combining Python programming with
-              geospatial analysis, remote sensing, and automated GIS workflows.
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Galaxia Geotech Institute offers end-to-end training and consulting in GIS, Remote Sensing,
+              GPS field surveying, and computational spatial automation.
             </p>
           </div>
+
           <Link
-            href="/courses"
-            className="inline-flex shrink-0 items-center gap-2 text-xs font-bold tracking-widest text-gray-900 hover:text-primary uppercase"
+            href="/services"
+            className="inline-flex shrink-0 items-center gap-2 text-xs font-bold tracking-widest text-foreground hover:text-primary uppercase"
           >
-            View Full Curriculum <ArrowRight className="size-4" />
+            Explore All Services &rarr;
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {CAPABILITIES.map((item) => {
+        {/* 8 Services Grid */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {INSTITUTE_SERVICES.map((item) => {
             const Icon = item.icon
             return (
-              <article
+              <div
                 key={item.title}
-                className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="flex flex-col justify-between rounded-xl border border-border bg-background p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5"
               >
-                <div className="relative h-48">
-                  <Image src={item.image} alt={item.title} fill className="object-cover" />
-                  <span className="absolute top-4 left-4 flex size-10 items-center justify-center rounded bg-navy text-white">
-                    <Icon className="size-5 text-primary" />
+                <div>
+                  <span className="flex size-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon className="size-5" />
                   </span>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-600">
-                    {item.description}
+                  <h3 className="mt-4 font-display text-base font-bold text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                    {item.desc}
                   </p>
-                  <Link
-                    href="/courses"
-                    className="mt-8 flex w-full items-center justify-center rounded bg-gray-50 px-4 py-3 text-xs font-bold uppercase tracking-wider text-gray-900 transition-colors hover:bg-gray-100"
-                  >
-                    Explore Syllabus &rarr;
-                  </Link>
                 </div>
-              </article>
+
+                <div className="mt-5 pt-4 border-t border-border flex items-center justify-between text-[0.7rem] font-bold text-primary uppercase">
+                  <span>Practical Lab Training</span>
+                  <ArrowRight className="size-3" />
+                </div>
+              </div>
             )
           })}
         </div>

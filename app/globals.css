@@ -87,3 +87,49 @@
 @utility container-page {
   @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
 }
+
+/* Infinite Testimonial Slider Marquee Keyframes */
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-ltr-row1 {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-ltr 38s linear infinite;
+}
+
+.animate-marquee-ltr-row2 {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-ltr 48s linear infinite;
+}
+
+.animate-marquee-rtl-row3 {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-rtl 42s linear infinite;
+}
+
+.marquee-pause-hover:hover .animate-marquee-ltr-row1,
+.marquee-pause-hover:hover .animate-marquee-ltr-row2,
+.marquee-pause-hover:hover .animate-marquee-rtl-row3 {
+  animation-play-state: paused;
+}

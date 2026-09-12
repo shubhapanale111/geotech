@@ -47,12 +47,16 @@ export function SiteHeader() {
       <div className="bg-navy border-b border-white/10 text-navy-foreground py-2 text-[0.7rem] font-medium">
         <div className="container-page flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1 rounded bg-primary/20 px-2 py-0.5 font-bold text-primary uppercase">
-              🗺️ Python with GIS &amp; Geospatial Technology
+            <span className="inline-flex items-center gap-1 rounded bg-emerald-500/20 px-2 py-0.5 font-bold text-emerald-400 uppercase">
+              🏆 ISO 9001:2015 Certified Institute
             </span>
             <span className="hidden md:inline-block text-navy-muted">|</span>
             <span className="hidden md:inline-flex items-center gap-1 text-white">
-              <MapPin className="size-3 text-primary" /> FC Road, Pune Center
+              <MapPin className="size-3 text-primary" /> Shreenath Plaza, FC Road, Pune
+            </span>
+            <span className="hidden lg:inline-block text-navy-muted">|</span>
+            <span className="hidden lg:inline-block text-gray-300">
+              Regular &amp; Weekend Batches (Online &amp; Offline)
             </span>
           </div>
 
@@ -66,7 +70,7 @@ export function SiteHeader() {
             <span className="text-white/20">|</span>
             <button
               type="button"
-              onClick={() => handleOpenDemoModal('Python with GIS Course')}
+              onClick={() => handleOpenDemoModal('Free Demo Class Inquiry')}
               className="inline-flex items-center gap-1 font-bold text-primary hover:underline uppercase"
             >
               <Sparkles className="size-3" /> Book Free Demo Class &rarr;
@@ -82,9 +86,14 @@ export function SiteHeader() {
             <span className="flex size-8 items-center justify-center rounded-md bg-navy text-navy-foreground">
               <Layers className="size-4 text-primary" strokeWidth={2.2} />
             </span>
-            <span className="font-display text-lg font-bold tracking-tight text-foreground">
-              Galaxia Geotech <span className="text-xs font-bold text-primary uppercase">GIS</span>
-            </span>
+            <div>
+              <span className="font-display text-base sm:text-lg font-bold tracking-tight text-foreground block leading-none">
+                Galaxia Geotech <span className="text-xs font-bold text-primary uppercase">Institute</span>
+              </span>
+              <span className="text-[0.6rem] font-semibold text-muted-foreground tracking-wide block">
+                ISO 9001:2015 Certified • Pune
+              </span>
+            </div>
           </Link>
 
           <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
