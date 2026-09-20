@@ -1,32 +1,22 @@
 'use client'
 
-import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import { EnrollmentModal } from '@/components/enrollment-modal'
+import { Eyebrow } from '@/components/primitives'
 import {
   ArrowRight,
-  Award,
-  BookOpen,
   Briefcase,
   CheckCircle2,
   Clock,
-  Code,
   Compass,
-  Database,
   Globe,
   GraduationCap,
-  Layers,
-  MapPin,
   Mountain,
-  Radio,
   ShieldCheck,
-  Sparkles,
-  TrendingUp,
-  Users,
-  Zap,
+  Sparkles
 } from 'lucide-react'
-import { Eyebrow } from '@/components/primitives'
-import { EnrollmentModal } from '@/components/enrollment-modal'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
 const OFFICIAL_COURSES = [
   {
@@ -34,7 +24,7 @@ const OFFICIAL_COURSES = [
     title: 'Certificate Course in GIS & RS',
     duration: 'Six Month Diploma',
     badge: 'Flagship Career Program',
-    image: '/images/CoverPhoto.png',
+    image: '/images/gis_rs.png',
     description:
       'Comprehensive master diploma covering GIS, Remote Sensing, Satellite Image Analysis, GPS field surveying, spatial databases, and Python geospatial automation.',
     highlights: [
@@ -49,11 +39,30 @@ const OFFICIAL_COURSES = [
     seats: 'Admissions Open',
   },
   {
+    id: 'gis-developer-6m',
+    title: 'GIS Developer (6 Months)',
+    duration: 'Six Month Course',
+    badge: 'GIS Development Track',
+    image: '/images/B.png',
+    description:
+      'Comprehensive GIS development program covering web GIS, spatial databases, GIS APIs, frontend mapping, backend geospatial services, and Python/JavaScript-based GIS application development.',
+    highlights: [
+      'GIS Fundamentals, Spatial Data & Coordinate Reference Systems',
+      'Web Mapping with Leaflet, OpenLayers & Mapbox',
+      'Spatial Databases with PostgreSQL & PostGIS',
+      'GIS APIs & Backend Development with Node.js / Python',
+      'GeoServer, WMS, WFS & OGC Web Services',
+      'Real-world GIS Web Application Development Projects',
+    ],
+    mode: 'Regular & Weekend Batches • Online & Offline',
+    seats: 'Admissions Open',
+  },
+  {
     id: 'gis-3m',
     title: 'Certificate Course in GIS',
     duration: 'Three Month Course',
     badge: 'Core Professional Track',
-    image: '/images/firmware-coding.png',
+    image: '/images/cc.jpg',
     description:
       'Master core GIS concepts, vector & raster spatial data processing, Coordinate Reference Systems (CRS), thematic cartography, and spatial database querying.',
     highlights: [
@@ -72,7 +81,7 @@ const OFFICIAL_COURSES = [
     title: 'Certificate Course in GIS & Land Surveying',
     duration: 'Three Month Course',
     badge: 'Civil & Survey Track',
-    image: '/images/surveyor-field.png',
+    image: '/images/G.jpg',
     description:
       'Bridge field surveying and digital GIS. Learn GPS / DGPS data collection, total station survey integration, topographic mapping, and revenue cadastral parcel georeferencing.',
     highlights: [
@@ -91,7 +100,7 @@ const OFFICIAL_COURSES = [
     title: 'Certificate Course in GIS Python',
     duration: 'One Month Fast-Track',
     badge: 'Automation Track',
-    image: '/images/engineering-3d-model.png',
+    image: '/images/pgis.png',
     description:
       'Learn Python programming specifically tailored for geospatial workflows. Automate shapefile processing with GeoPandas, Shapely, Rasterio, and build spatial analysis pipelines.',
     highlights: [
@@ -110,7 +119,7 @@ const OFFICIAL_COURSES = [
     title: 'Certificate Course in Single Software',
     duration: 'One Month Intensive',
     badge: 'Tool Specialization',
-    image: '/images/aerial-map.png',
+    image: '/images/D.png',
     description:
       'Targeted, hands-on mastery in a single industry-leading GIS software tool of your choice (QGIS, ArcGIS Pro, PostGIS / Spatial SQL, or Global Mapper).',
     highlights: [
@@ -184,32 +193,33 @@ export function StudentPrograms() {
         </div>
 
         {/* 5 Courses Grid */}
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           {OFFICIAL_COURSES.map((course, idx) => {
             const isFeatured = idx === 0
+
             return (
               <div
                 key={course.id}
-                className={`flex flex-col justify-between overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:shadow-lg ${
-                  isFeatured
-                    ? 'border-primary md:col-span-2 lg:col-span-1 ring-1 ring-primary/30'
-                    : 'border-border hover:border-primary/50'
-                }`}
+                className={`flex flex-col justify-between overflow-hidden rounded-2xl border bg-card shadow-sm transition-all duration-300 hover:shadow-lg ${isFeatured
+                  ? "border-primary md:col-span-2 lg:col-span-1 ring-1 ring-primary/30"
+                  : "border-border hover:border-primary/50"
+                  }`}
               >
                 <div>
-                  <div className="relative h-48 w-full overflow-hidden bg-navy">
+                  {/* Increased image height further */}
+                  <div className="relative h-84 w-full overflow-hidden bg-navy">
                     <Image
                       src={course.image}
                       alt={course.title}
                       fill
-                      className="object-cover transition-transform duration-500 hover:scale-105 opacity-85"
+                      className="object-fit transition-transform duration-500 hover:scale-105 opacity-85"
                     />
+
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <span className="absolute top-3 left-3 rounded bg-primary px-2.5 py-1 text-[0.7rem] font-bold uppercase tracking-wider text-primary-foreground">
-                      {course.badge}
-                    </span>
-                    <span className="absolute bottom-3 left-3 text-xs font-bold text-white uppercase flex items-center gap-1.5">
-                      <Clock className="size-3.5 text-primary" /> {course.duration}
+
+                    <span className="absolute bottom-3 left-3 flex items-center gap-1.5 text-xs font-bold uppercase text-white">
+                      <Clock className="size-3.5 text-primary" />
+                      {course.duration}
                     </span>
                   </div>
 
@@ -217,17 +227,23 @@ export function StudentPrograms() {
                     <h3 className="font-display text-xl font-bold text-foreground">
                       {course.title}
                     </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+
+                    {/* Description reduced to a single line */}
+                    <p className="mt-1.5 line-clamp-1 text-xs leading-snug text-muted-foreground">
                       {course.description}
                     </p>
 
-                    <div className="mt-5 space-y-1.5 border-t border-border pt-4">
+                    <div className="mt-4 space-y-1.5 border-t border-border pt-4">
                       <p className="text-[0.7rem] font-bold uppercase tracking-wider text-foreground">
                         Syllabus Highlights:
                       </p>
+
                       {course.highlights.slice(0, 4).map((h) => (
-                        <div key={h} className="flex items-start gap-2 text-xs font-medium text-foreground">
-                          <CheckCircle2 className="size-3.5 text-primary shrink-0 mt-0.5" />
+                        <div
+                          key={h}
+                          className="flex items-start gap-2 text-xs font-medium text-foreground"
+                        >
+                          <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-primary" />
                           <span className="line-clamp-1">{h}</span>
                         </div>
                       ))}
@@ -236,20 +252,22 @@ export function StudentPrograms() {
                 </div>
 
                 <div className="border-t border-border bg-muted/40 p-5">
-                  <p className="text-[0.65rem] font-semibold text-muted-foreground mb-3">
+                  <p className="mb-3 text-[0.65rem] font-semibold text-muted-foreground">
                     📍 {course.mode}
                   </p>
+
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
                       onClick={() => setSelectedCourse(course.title)}
-                      className="w-full rounded-md bg-navy py-2.5 text-center text-xs font-bold uppercase tracking-wider text-navy-foreground hover:bg-navy/90 transition-colors dark:bg-primary dark:text-primary-foreground"
+                      className="w-full rounded-md bg-navy py-2.5 text-center text-xs font-bold uppercase tracking-wider text-navy-foreground transition-colors hover:bg-navy/90 dark:bg-primary dark:text-primary-foreground"
                     >
                       Enroll Now
                     </button>
+
                     <Link
                       href="/courses"
-                      className="rounded-md border border-border bg-card px-3 py-2.5 text-center text-xs font-bold text-foreground hover:bg-muted transition-colors uppercase"
+                      className="rounded-md border border-border bg-card px-3 py-2.5 text-center text-xs font-bold uppercase text-foreground transition-colors hover:bg-muted"
                       title="View Details"
                     >
                       <ArrowRight className="size-4" />

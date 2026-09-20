@@ -1,20 +1,21 @@
-import { HomeHero } from '@/components/home/home-hero'
-import { StudentPrograms } from '@/components/home/student-programs'
 import { CoreCapabilities } from '@/components/home/core-capabilities'
-import { StabilityProcess } from '@/components/home/stability-process'
-import { IndustriesServed } from '@/components/home/industries-served'
-import { SignatureProjects } from '@/components/home/signature-projects'
-import { StudentTestimonialsCarousel } from '@/components/home/student-testimonials-carousel'
 import { FeedbackQueries } from '@/components/home/feedback-queries'
+import { HomeHero } from '@/components/home/home-hero'
+import { IndustriesServed } from '@/components/home/industries-served'
+import { InstituteImageCarousel } from '@/components/home/institute-image-carousel'
+import { SignatureProjects } from '@/components/home/signature-projects'
+import { StudentPrograms } from '@/components/home/student-programs'
+import { StudentTestimonialsCarousel } from '@/components/home/student-testimonials-carousel'
 import { OrangeCta } from '@/components/orange-cta'
 
 export default function HomePage() {
   return (
     <>
+      {/* <InstituteImageCarousel /> */}
       <HomeHero />
       <StudentPrograms />
+      <InstituteImageCarousel />
       <CoreCapabilities />
-      <StabilityProcess />
       <IndustriesServed />
       <SignatureProjects />
       <StudentTestimonialsCarousel />

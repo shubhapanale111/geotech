@@ -67,14 +67,6 @@ export function SiteHeader() {
             >
               <Phone className="size-3 text-primary" /> 752-2929-752
             </a>
-            <span className="text-white/20">|</span>
-            <button
-              type="button"
-              onClick={() => handleOpenDemoModal('Free Demo Class Inquiry')}
-              className="inline-flex items-center gap-1 font-bold text-primary hover:underline uppercase"
-            >
-              <Sparkles className="size-3" /> Book Free Demo Class &rarr;
-            </button>
           </div>
         </div>
       </div>
@@ -133,6 +125,7 @@ export function SiteHeader() {
             >
               <GraduationCap className="size-4" /> Enroll Now
             </button>
+
 
             <button
               type="button"

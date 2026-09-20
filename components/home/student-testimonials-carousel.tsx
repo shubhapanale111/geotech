@@ -256,15 +256,6 @@ export function StudentTestimonialsCarousel() {
           </div>
 
           <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => setIsPaused(!isPaused)}
-              aria-label={isPaused ? 'Resume scrolling' : 'Pause scrolling'}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground hover:bg-muted hover:text-foreground transition-colors shadow-sm"
-            >
-              {isPaused ? <Play className="size-3 text-primary" /> : <Pause className="size-3 text-primary" />}
-              <span>{isPaused ? 'Resume Scroll' : 'Pause on Hover'}</span>
-            </button>
             <Link
               href="/courses"
               className="hidden sm:inline-flex items-center gap-1.5 rounded-md bg-navy px-4 py-2 text-xs font-bold uppercase tracking-wider text-navy-foreground hover:bg-navy/90 transition-colors dark:bg-primary dark:text-primary-foreground"
@@ -277,16 +268,14 @@ export function StudentTestimonialsCarousel() {
 
       {/* 3 Infinite Scrolling Rows Container */}
       <div
-        className={`mt-12 space-y-6 overflow-hidden ${
-          isPaused ? '' : 'marquee-pause-hover'
-        }`}
+        className={`mt-12 space-y-6 overflow-hidden ${isPaused ? '' : 'marquee-pause-hover'
+          }`}
       >
         {/* ROW 1: Moves Left to Right */}
         <div className="overflow-hidden">
           <div
-            className={`animate-marquee-ltr-row1 flex items-center gap-6 ${
-              isPaused ? '[animation-play-state:paused]' : ''
-            }`}
+            className={`animate-marquee-ltr-row1 flex items-center gap-6 ${isPaused ? '[animation-play-state:paused]' : ''
+              }`}
           >
             {[...ROW_1_TESTIMONIALS, ...ROW_1_TESTIMONIALS, ...ROW_1_TESTIMONIALS].map(
               (item, idx) => (
@@ -299,9 +288,8 @@ export function StudentTestimonialsCarousel() {
         {/* ROW 2: Moves Left to Right (offset speed) */}
         <div className="overflow-hidden">
           <div
-            className={`animate-marquee-ltr-row2 flex items-center gap-6 ${
-              isPaused ? '[animation-play-state:paused]' : ''
-            }`}
+            className={`animate-marquee-ltr-row2 flex items-center gap-6 ${isPaused ? '[animation-play-state:paused]' : ''
+              }`}
           >
             {[...ROW_2_TESTIMONIALS, ...ROW_2_TESTIMONIALS, ...ROW_2_TESTIMONIALS].map(
               (item, idx) => (
@@ -314,9 +302,8 @@ export function StudentTestimonialsCarousel() {
         {/* ROW 3: Moves Right to Left */}
         <div className="overflow-hidden">
           <div
-            className={`animate-marquee-rtl-row3 flex items-center gap-6 ${
-              isPaused ? '[animation-play-state:paused]' : ''
-            }`}
+            className={`animate-marquee-rtl-row3 flex items-center gap-6 ${isPaused ? '[animation-play-state:paused]' : ''
+              }`}
           >
             {[...ROW_3_TESTIMONIALS, ...ROW_3_TESTIMONIALS, ...ROW_3_TESTIMONIALS].map(
               (item, idx) => (
@@ -379,9 +366,6 @@ function TestimonialCard({ data }: { data: TestimonialCardData }) {
             ))}
             <span className="ml-1 text-[0.7rem] font-bold text-foreground">5.0</span>
           </div>
-          <span className="inline-flex items-center gap-1 rounded bg-primary/10 px-2 py-0.5 text-[0.65rem] font-bold text-primary uppercase">
-            <CheckCircle2 className="size-2.5" /> Verified Alum
-          </span>
         </div>
 
         {/* Course Badge */}
@@ -395,16 +379,6 @@ function TestimonialCard({ data }: { data: TestimonialCardData }) {
         <blockquote className="mt-2.5 text-xs leading-relaxed text-foreground font-medium italic line-clamp-4">
           &ldquo;{data.quote}&rdquo;
         </blockquote>
-
-        {/* Project Tag */}
-        <div className="mt-3 rounded-lg border border-border bg-muted/40 p-2 text-[0.7rem]">
-          <span className="font-bold text-muted-foreground block text-[0.65rem] uppercase tracking-wider">
-            Capstone Project:
-          </span>
-          <p className="font-semibold text-foreground truncate mt-0.5">
-            {data.project}
-          </p>
-        </div>
       </div>
 
       {/* Footer / Student Info (No face photos, pure elegant card typography) */}

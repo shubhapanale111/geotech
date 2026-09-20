@@ -22,6 +22,7 @@ import { EnrollmentModal } from '@/components/enrollment-modal'
 
 const CORE_COURSES = [
   'GIS & RS (6 Month)',
+  'GIS Developer (6 Month)',
   'GIS (3 Month)',
   'GIS & Land Surveying (3 Month)',
   'GIS Python (1 Month)',
@@ -39,32 +40,20 @@ export function HomeHero() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-navy text-white">
+      <section className="relative overflow-hidden  text-white">
         <Image
           src="/images/CoverPhoto.png"
           alt="Galaxia Geotech Institute of Pune - GIS, Remote Sensing & Land Surveying"
           fill
           priority
-          className="object-cover opacity-75 transition-opacity duration-300"
+          className="object-cover transition-opacity duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/55 to-navy/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/5 via-navy/55 to-navy/40" />
 
         <div className="container-page relative z-10 py-4 md:py-6 lg:py-10">
           <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
             {/* Left Content Column */}
             <div>
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/20 px-3.5 py-1 text-xs font-bold tracking-wider text-primary uppercase backdrop-blur-sm">
-                  <ShieldCheck className="size-3.5 text-emerald-400" /> An ISO 9001:2015 Certified Institute
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-gray-200">
-                  <MapPin className="size-3 text-primary" /> FC Road, Pune Center
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-400">
-                  Online &amp; Offline Classes
-                </span>
-              </div>
-
               <h1 className="mt-5 font-display text-4xl leading-tight font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
                 Galaxia Geotech <span className="text-primary">Institute of Pune</span>
               </h1>
@@ -128,9 +117,6 @@ export function HomeHero() {
             <div className="rounded-2xl border border-white/15 bg-navy/95 p-6 shadow-2xl backdrop-blur-md">
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <div>
-                  <span className="text-[0.65rem] font-bold tracking-widest text-primary uppercase">
-                    Admissions Open
-                  </span>
                   <h2 className="font-display text-xl font-bold text-white">
                     Types of GIS Courses
                   </h2>
@@ -140,12 +126,12 @@ export function HomeHero() {
                 </span>
               </div>
 
-              <div className="mt-4 rounded-lg bg-white/5 p-3 text-center border border-white/10">
-                <p className="text-[0.7rem] font-bold tracking-widest text-emerald-400 uppercase flex items-center justify-center gap-1.5">
+              <div className="mt-4 rounded-lg bg-white/5 p-3 text-center  text-white  border border-white/10">
+                <p className="text-[0.8rem] font-bold tracking-widest uppercase flex items-center justify-center gap-1.5">
                   <Clock className="size-3.5" /> Regular &amp; Weekend Batches Available
                 </p>
-                <p className="mt-0.5 text-xs text-navy-muted">
-                  Online Live Classes &amp; Offline Lab at FC Road, Pune
+                <p className="mt-0.5 text-xs text-emerald-400">
+                  Online and Offline classes
                 </p>
               </div>
 
@@ -168,7 +154,6 @@ export function HomeHero() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-                <span className="text-navy-muted">Need syllabus guidance?</span>
                 <button
                   type="button"
                   onClick={() => openDemoModal('Book Free Demo Session')}
