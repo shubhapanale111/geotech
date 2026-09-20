@@ -50,7 +50,7 @@ export function HomeHero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/5 via-navy/55 to-navy/40" />
 
-        <div className="container-page relative z-10 py-4 md:py-6 lg:py-10">
+        <div className="container-page relative z-10 py-4 md:py-6 lg:py-4">
           <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
             {/* Left Content Column */}
             <div>
@@ -87,29 +87,6 @@ export function HomeHero() {
                   <CheckCircle2 className="size-4 text-emerald-400 shrink-0" />
                   <span>ISO 9001:2015 Certifications &amp; Placement Support</span>
                 </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <button
-                  type="button"
-                  onClick={() => openDemoModal('General Admissions & Demo')}
-                  className="flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-xs font-bold tracking-wider text-primary-foreground uppercase shadow-lg transition-all hover:bg-primary/90 hover:scale-[1.02]"
-                >
-                  <GraduationCap className="size-4" /> Enroll Now
-                </button>
-                <Link
-                  href="/courses"
-                  className="rounded-md border border-white/30 bg-white/10 px-7 py-3.5 text-xs font-bold tracking-wider text-white uppercase backdrop-blur-sm transition-colors hover:bg-white/20"
-                >
-                  Explore 5 Certified Courses
-                </Link>
-                <a
-                  href="tel:7522929752"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-gray-200 hover:text-white transition-colors"
-                >
-                  <Phone className="size-3.5 text-primary" /> Call 752-2929-752
-                </a>
               </div>
             </div>
 
