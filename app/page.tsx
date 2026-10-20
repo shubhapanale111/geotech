@@ -1,31 +1,25 @@
-import { CoreCapabilities } from '@/components/home/core-capabilities'
-import { FeedbackQueries } from '@/components/home/feedback-queries'
-import { HomeHero } from '@/components/home/home-hero'
-import { IndustriesServed } from '@/components/home/industries-served'
-import { InstituteImageCarousel } from '@/components/home/institute-image-carousel'
-import { SignatureProjects } from '@/components/home/signature-projects'
-import { StudentPrograms } from '@/components/home/student-programs'
-import { StudentTestimonialsCarousel } from '@/components/home/student-testimonials-carousel'
-import { OrangeCta } from '@/components/orange-cta'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight, MapPin, Monitor, ShieldCheck } from 'lucide-react'
+import { CareerOutcomes } from '@/components/home/career-outcomes'
+import { PageHero } from '@/components/page-hero'
+
+const tracks = [
+  ['01', 'GIS & Remote Sensing', '6 MONTHS', 'The complete field-to-spatial-analysis diploma.', 'QGIS · ArcGIS · satellite imagery · PostGIS · Python', '/images/gis_rs.png'],
+  ['02', 'GIS Developer', '6 MONTHS', 'For analysts ready to build automation and Web GIS.', 'Python · GeoPandas · PostGIS · GeoServer', '/images/B.png'],
+  ['03', 'GIS & Land Surveying', '3 MONTHS', 'Turn field coordinates into dependable GIS deliverables.', 'DGPS · Total Station · contours · cadastral maps', '/images/G.jpg'],
+  ['04', 'GIS Python', '1 MONTH', 'Stop clicking through repeatable work. Script it.', 'GeoPandas · Rasterio · Shapely · DEM', '/images/pgis.png'],
+  ['05', 'Core GIS', '3 MONTHS', 'A serious foundation in spatial data and cartography.', 'QGIS · georeferencing · SQL · spatial analysis', '/images/cc.jpg'],
+  ['06', 'Single Software', '1 MONTH', 'Focused software mastery for active project work.', 'QGIS · ArcGIS Pro · PostGIS · Global Mapper', '/images/D.png'],
+]
 
 export default function HomePage() {
-  return (
-    <>
-      {/* <InstituteImageCarousel /> */}
-      <HomeHero />
-      <StudentPrograms />
-      <InstituteImageCarousel />
-      <CoreCapabilities />
-      <IndustriesServed />
-      <SignatureProjects />
-      <StudentTestimonialsCarousel />
-      <FeedbackQueries />
-      <OrangeCta
-        title="Ready to Build Your GIS Career?"
-        description="Learn Python, GIS and geospatial analysis through practical projects with institute-recognized certification."
-        primary={{ label: 'Enroll in Python with GIS →', href: '/contact' }}
-        secondary={{ label: 'Talk to an Instructor', href: '/contact' }}
-      />
-    </>
-  )
+  return <>
+    <PageHero eyebrow="Pune · ISO 9001:2015 · Practical GIS training" title={<>From field <em className="font-inherit text-orange-400">coordinates</em> to career work.</>} description="Learn GIS, remote sensing, surveying and Python by working with the instruments, datasets and technical decisions that shape real projects." image="/images/CoverPhoto.png" imageAlt="GIS workstation and field-to-data work at Galaxia Geotech" imagePosition="center" priority actions={[{href:'/contact',label:'Book a free 2-day demo'},{href:'/courses',label:'Explore programs',tone:'secondary'}]} proof={[{value:'6',label:'certified tracks'},{value:'4',label:'portfolio projects'},{value:'FC Road',label:'Pune lab'}]} />
+    <section className="border-y bg-white"><div className="container-page grid divide-y divide-slate-200 md:grid-cols-3 md:divide-x md:divide-y-0"><div className="flex gap-3 py-6"><MapPin className="size-5 text-orange-600" /><p className="text-sm"><b className="block">A real Pune classroom</b><span className="text-slate-500">FC Road, 8 AM–7:30 PM</span></p></div><div className="flex gap-3 py-6 md:pl-7"><Monitor className="size-5 text-orange-600" /><p className="text-sm"><b className="block">Workstation-first learning</b><span className="text-slate-500">Software, datasets, guided labs</span></p></div><div className="flex gap-3 py-6 md:pl-7"><ShieldCheck className="size-5 text-emerald-600" /><p className="text-sm"><b className="block">Verified outcomes</b><span className="text-slate-500">Alumni across GIS &amp; engineering teams</span></p></div></div></section>
+    <section className="container-page py-24"><div className="grid gap-8 md:grid-cols-[.75fr_1.25fr]"><div><p className="eyebrow text-orange-600">Six ways in</p><h2 className="display mt-4 text-4xl font-black leading-none">Choose your<br />working lane.</h2><p className="mt-5 max-w-sm text-sm leading-6 text-slate-600">Start with a career goal, then build technical proof. Each program is structured around practical output.</p><Link className="mt-7 inline-block text-xs font-bold uppercase tracking-wider text-orange-600 hover:text-orange-800" href="/courses">Compare all programs →</Link></div><div className="border-t border-slate-900">{tracks.map(([number, title, duration, description, tools, image]) => <Link key={number} href="/courses" className="group grid grid-cols-[32px_64px_minmax(0,1fr)_20px] gap-x-3 gap-y-3 border-b border-slate-300 py-5 focus-ring sm:grid-cols-[40px_76px_minmax(0,1.2fr)_minmax(145px,.8fr)_24px] sm:items-center"><span className="self-start pt-1 text-xs font-bold text-orange-600 sm:self-center sm:pt-0">{number}</span><div className="relative col-start-2 row-span-2 aspect-square overflow-hidden rounded-tl-2xl rounded-br-2xl bg-navy sm:row-span-1"><Image src={image} alt={`${title} course training`} fill sizes="(min-width: 640px) 76px, 64px" className="object-cover transition duration-500 ease-out group-hover:scale-[1.04]" /><span aria-hidden="true" className="absolute inset-0 bg-navy/30 transition-opacity duration-500 group-hover:bg-navy/15" /></div><div className="col-start-3 min-w-0"><h3 className="text-lg font-bold transition-colors group-hover:text-orange-600">{title}</h3><p className="mt-1 text-sm text-slate-500">{description}</p></div><div className="col-start-2 col-end-4 sm:col-auto"><p className="text-xs font-bold tracking-wider text-slate-900">{duration}</p><p className="mt-1 text-[11px] leading-4 text-slate-500">{tools}</p></div><ArrowUpRight className="col-start-4 row-start-1 size-5 self-start text-slate-400 transition-colors group-hover:text-orange-600 sm:col-start-auto sm:row-auto sm:self-center" /></Link>)}</div></div></section>
+    <section className="bg-[#e9eef5] py-24"><div className="container-page"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p className="eyebrow text-orange-600">Portfolio, not busywork</p><h2 className="display mt-4 text-4xl font-black">Projects with a point.</h2></div><Link className="text-xs font-bold uppercase tracking-wider text-orange-700" href="/projects">See all capstones →</Link></div><div className="mt-10 grid gap-px bg-slate-300 lg:grid-cols-4">{[['01', 'Healthcare access', '500m–3km service areas'], ['02', 'Drainage extraction', 'DEM → stream network'], ['03', 'Land change', 'Sentinel-2 classification'], ['04', 'Flood susceptibility', 'AHP risk modelling']].map(([number, title, description], index) => <article key={number} className={`min-h-64 p-6 ${index === 0 ? 'bg-navy text-white' : 'bg-white'}`}><span className="text-xs font-black text-orange-600">{number}</span><h3 className="mt-20 text-xl font-bold">{title}</h3><p className={index === 0 ? 'mt-2 text-sm text-slate-300' : 'mt-2 text-sm text-slate-500'}>{description}</p><p className="mt-5 text-[10px] font-bold tracking-wider uppercase text-emerald-600">Build · document · present</p></article>)}</div></div></section>
+    <CareerOutcomes />
+    <section className="bg-orange-600 text-white"><div className="container-page grid gap-8 py-16 md:grid-cols-[1.3fr_.7fr] md:items-end"><div><p className="eyebrow text-orange-100">Next batch starts with a conversation</p><h2 className="display mt-4 text-4xl font-black sm:text-5xl">Come sit in a real class.</h2><p className="mt-4 max-w-lg text-sm leading-6 text-orange-50">Take a free two-day demo. Meet the mentors, try the software and choose a program after you have seen the lab.</p></div><Link className="focus-ring bg-navy px-5 py-4 text-center text-xs font-bold uppercase tracking-wider hover:bg-slate-900" href="/contact">Plan your demo class →</Link></div></section>
+  </>
 }

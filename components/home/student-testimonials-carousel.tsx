@@ -1,228 +1,170 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   Star,
-  Quote,
-  CheckCircle2,
   ShieldCheck,
   Award,
-  Sparkles,
-  MapPin,
   Briefcase,
   GraduationCap,
-  Play,
-  Pause,
-  ArrowRight,
-  Layers,
-  Compass,
+  Sparkles,
+  MapPin,
+  CheckCircle2,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/primitives'
 
-interface TestimonialCardData {
+export interface RealStudentTestimonial {
   id: string
   name: string
   role: string
   company: string
   course: string
-  prevBackground: string
+  image: string
   quote: string
-  project: string
   rating: number
 }
 
-// Row 1 Testimonials (Moves Left to Right)
-const ROW_1_TESTIMONIALS: TestimonialCardData[] = [
+// 12 Real Student Alumni from /public/testimonial/ and content.md Section 7
+export const STUDENT_TESTIMONIALS: RealStudentTestimonial[] = [
   {
-    id: 'r1-1',
-    name: 'Priya Sharma',
-    role: 'GIS Analyst & Developer',
-    company: 'Geospatial Analytics Solutions',
-    course: 'One-Month Certificate Course in GIS Python',
-    prevBackground: 'B.E. Civil Engineering',
+    id: 'st-1',
+    name: 'Jayesh Mukund Deolalkar',
+    role: 'GIS Engineer',
+    company: 'Cognizant',
+    course: 'Master Diploma in GIS & RS (6 Month)',
+    image: '/testimonial/JAYESH MUKUND DEOLALKAR.png',
     quote:
-      'The 1-month Python GIS training completely transformed how I work. Learning GeoPandas and Rasterio automation helped me eliminate days of manual editing in QGIS. Directly cracked an interview at a geospatial firm in Pune!',
-    project: 'Automated 500m Buffer Analysis & Flood Vulnerability Map',
+      'The 6-month GIS & Remote Sensing diploma gave me end-to-end practical confidence. Working on real Pune municipal satellite imagery and PostGIS databases helped me crack Cognizant’s technical interview in my first attempt.',
     rating: 5,
   },
   {
-    id: 'r1-2',
-    name: 'Amit Deshmukh',
+    id: 'st-2',
+    name: 'Sneha Ramesh Ghorpade',
+    role: 'GIS Executive',
+    company: 'Reliance Jio',
+    course: 'GIS & Land Surveying (3 Month)',
+    image: '/testimonial/Sneha Ramesh Ghorpade.png',
+    quote:
+      'Galaxia Geotech’s practical lab training at FC Road changed everything for me. The DGPS ground surveying combined with QGIS spatial analysis gave me real industry-ready skills.',
+    rating: 5,
+  },
+  {
+    id: 'st-3',
+    name: 'Ashwini Charudatta Sarvagod',
+    role: 'Junior GIS Analyst',
+    company: 'Tech Mahindra',
+    course: 'Certificate Course in GIS Python (1 Month)',
+    image: '/testimonial/Ashwini Charudatta Sarvagod.png',
+    quote:
+      'Ashwik Sir’s Python GIS automation sessions were gold. Writing automated scripts with GeoPandas and Rasterio set me apart from other candidates during placements.',
+    rating: 5,
+  },
+  {
+    id: 'st-4',
+    name: 'Vipul Dalvi',
     role: 'Remote Sensing Specialist',
-    company: 'SatSure Earth Analytics',
-    course: 'Certificate Course in GIS & RS (Six Month)',
-    prevBackground: 'M.Sc. Geography',
+    company: 'The Nisarga Consultancy',
+    course: 'Master Diploma in GIS & RS (6 Month)',
+    image: '/testimonial/Vipul Dalvi.png',
     quote:
-      'The 6-month comprehensive program is the best investment I ever made. Covering GIS fundamentals, satellite image processing, GPS field surveying, and Python scripting under one roof gave me an unmatched skill set.',
-    project: 'Multi-Temporal Sentinel-2 NDVI Land Cover Analysis',
+      'The hands-on Sentinel-2 satellite image classification and DEM watershed modeling gave me an exceptional portfolio that employers immediately appreciated.',
     rating: 5,
   },
   {
-    id: 'r1-3',
-    name: 'Siddharth Patil',
-    role: 'Cadastral & Land Surveyor',
-    company: 'L&T Infrastructure Projects',
-    course: 'Three-Month Certificate Course in GIS & Land Surveying',
-    prevBackground: 'Diploma in Civil Engineering',
+    id: 'st-5',
+    name: 'Shruti Bhausaheb Pawar',
+    role: 'GIS Analyst',
+    company: 'The Nisarga Consultancy',
+    course: 'Certificate Course in GIS (3 Month)',
+    image: '/testimonial/Shruti Bhausaheb pawar.png',
     quote:
-      'Hands-on training with GPS field surveying and integrating total station coordinates directly into GIS parcel boundaries at the FC Road lab made me completely site-ready for infrastructure surveying.',
-    project: 'High-Precision Highway Alignment & Cadastral Parcel Mapping',
+      'From day one, the focus is on practical workstations. No rote theory. We solved real geospatial problems and created portfolio-ready map layouts.',
     rating: 5,
   },
   {
-    id: 'r1-4',
-    name: 'Neha Joshi',
-    role: 'Junior Urban Planner',
-    company: 'Pune Smart City Development Corp',
-    course: 'Certificate Course in GIS (Three Month)',
-    prevBackground: 'B.Arch Urban Planning',
+    id: 'st-6',
+    name: 'Sanjay Thakur',
+    role: 'GIS Specialist',
+    company: 'ACS Technologies',
+    course: 'GIS & Land Surveying (3 Month)',
+    image: '/testimonial/Sanjay Thakur.jpeg',
     quote:
-      'The 3-month course gave me complete mastery over spatial database design, thematic cartography, and spatial joins. The mentors provide real municipal datasets for practice.',
-    project: 'Smart City Healthcare Access & Amenity Buffer Zoning',
+      'Coming from a civil background, the GIS & Land Surveying 3-month course was the perfect bridge. Prashant Sir made Total Station and DGPS concepts crystal clear.',
     rating: 5,
   },
   {
-    id: 'r1-5',
-    name: 'Vikram Shinde',
-    role: 'Geospatial Data Engineer',
-    company: 'Skymet Weather Services',
-    course: 'One-Month Certificate Course in GIS Python',
-    prevBackground: 'B.Sc. Computer Science',
+    id: 'st-7',
+    name: 'Pramod Mahadeo Apune',
+    role: 'GIS Analyst',
+    company: 'Innover Systems',
+    course: 'Certificate Course in GIS (3 Month)',
+    image: '/testimonial/Pramod Mahadeo Apune.png',
     quote:
-      'Transitioning from software development to geospatial engineering was seamless with Galaxia Geotech. Learning CRS transformations and raster algebra in Python was outstanding.',
-    project: 'Automated Rainfall Raster Ingestion & Basin Zonal Statistics',
+      'The 1-on-1 mentorship and resume portfolio guidance from Ashwik Sir helped me secure an immediate placement in Pune’s IT geospatial sector.',
+    rating: 5,
+  },
+  {
+    id: 'st-8',
+    name: 'Aditi Aher',
+    role: 'GIS Executive',
+    company: 'STP Pune',
+    course: 'Master Diploma in GIS & RS (6 Month)',
+    image: '/testimonial/Aditi Aher.png',
+    quote:
+      'The urban healthcare buffer analysis and municipal zoning projects made my interview at STP Pune a breeze.',
+    rating: 5,
+  },
+  {
+    id: 'st-9',
+    name: 'Pranita Bendre',
+    role: 'GIS Analyst',
+    company: 'Monarch',
+    course: 'Certificate Course in GIS (3 Month)',
+    image: '/testimonial/Pranita Bendre.jpeg',
+    quote:
+      'Weekend batches allowed me to upskill without leaving my current job. The recorded backup sessions were invaluable.',
+    rating: 5,
+  },
+  {
+    id: 'st-10',
+    name: 'Yuvraj Subhash Sale',
+    role: 'Geospatial Survey Specialist',
+    company: 'Prashant Advance Survey LLP',
+    course: 'GIS & Land Surveying (3 Month)',
+    image: '/testimonial/Yuvraj Subhash Sale.jpeg',
+    quote:
+      'Practical field exposure with total stations and DGPS at FC Road made all the difference.',
+    rating: 5,
+  },
+  {
+    id: 'st-11',
+    name: 'Nikita Anil Kumar Nair',
+    role: 'Spatial Data Associate',
+    company: 'Monarch',
+    course: 'Master Diploma in GIS & RS (6 Month)',
+    image: '/testimonial/NIKITA ANIL KUMAR NAIR.png',
+    quote:
+      'The dual-monitor workstations and dedicated lab guidance made mastering QGIS, ArcGIS and PostGIS intuitive and fast.',
+    rating: 5,
+  },
+  {
+    id: 'st-12',
+    name: 'Akshay Shegokar',
+    role: 'GIS Associate',
+    company: 'Geospatial Enterprise',
+    course: 'Professional GIS Developer (6 Month)',
+    image: '/testimonial/akshay shegokar.png',
+    quote:
+      'Learning spatial ETL pipelines and DEM elevation processing gave me the exact skills demanded by engineering consultants.',
     rating: 5,
   },
 ]
 
-// Row 2 Testimonials (Moves Left to Right)
-const ROW_2_TESTIMONIALS: TestimonialCardData[] = [
-  {
-    id: 'r2-1',
-    name: 'Sneha Kulkarni',
-    role: 'Senior GIS Consultant',
-    company: 'InfraPlan Geomatics',
-    course: 'Certificate Course in GIS & RS (Six Month)',
-    prevBackground: 'B.Tech Planning & GIS',
-    quote:
-      'Galaxia Geotech’s ISO 9001:2015 certification carries immense weight with corporate recruiters. The syllabus is completely practical, job-oriented, and updated with current industry trends.',
-    project: 'Watershed Basin Modeling & Flood Hazard Zoning in Sahyadris',
-    rating: 5,
-  },
-  {
-    id: 'r2-2',
-    name: 'Rahul Kadam',
-    role: 'GIS Field Survey Lead',
-    company: 'MegaSurvey Solutions Pune',
-    course: 'Three-Month Certificate Course in GIS & Land Surveying',
-    prevBackground: 'Civil & Surveying Diploma',
-    quote:
-      'I loved the practical field sessions on DGPS calibration, rover setups, and importing field point clouds into GIS software. Weekend batch timing was perfect while working full-time.',
-    project: 'DGPS Topographic Contour Survey for Pune Industrial Belt',
-    rating: 5,
-  },
-  {
-    id: 'r2-3',
-    name: 'Aniket Jadhav',
-    role: 'QGIS Specialist & Cartographer',
-    company: 'EcoTerrain Environmental',
-    course: 'Certificate Course in Single Software (One Month)',
-    prevBackground: 'B.Sc. Environmental Science',
-    quote:
-      'Needed fast, expert-level training in QGIS for an upcoming project deadline. In just 4 weeks, I learned advanced symbology, print composer layouts, spatial queries, and plugins.',
-    project: 'Forest Canopy Density & Protected Area Buffer Mapping',
-    rating: 5,
-  },
-  {
-    id: 'r2-4',
-    name: 'Tanvi Patel',
-    role: 'Satellite Imagery Analyst',
-    company: 'Genesys International Corp',
-    course: 'Certificate Course in GIS & RS (Six Month)',
-    prevBackground: 'M.Sc. Applied Geology',
-    quote:
-      'The remote sensing module covering satellite band ratios, supervised classification, and LiDAR point clouds was thorough and crystal clear. Top tier faculty with 10+ years experience.',
-    project: 'Geological Fault Line Mapping & Mineral Exploration GIS',
-    rating: 5,
-  },
-  {
-    id: 'r2-5',
-    name: 'Karan Mehra',
-    role: 'GIS Developer',
-    company: 'MapmyIndia / CE Info Systems',
-    course: 'One-Month Certificate Course in GIS Python',
-    prevBackground: 'B.E. Information Technology',
-    quote:
-      'Writing Python scripts with Shapely and Fiona to clean up topology errors saved hundreds of hours. The 1-on-1 code reviews by the trainers were game changing.',
-    project: 'Automated Vector Topology Validation & Boundary Repair Pipeline',
-    rating: 5,
-  },
-]
-
-// Row 3 Testimonials (Moves Right to Left)
-const ROW_3_TESTIMONIALS: TestimonialCardData[] = [
-  {
-    id: 'r3-1',
-    name: 'Pooja Gaikwad',
-    role: 'Hydrological Modeling Engineer',
-    company: 'Water Resources Consultancy',
-    course: 'One-Month Certificate Course in GIS Python',
-    prevBackground: 'M.Tech Water Resource Engineering',
-    quote:
-      'Extracting drainage networks from DEMs using automated Python scripts was the highlight for me. Galaxia Geotech is the only institute in Pune teaching actual spatial scripting with real elevation data.',
-    project: 'SRTM DEM Sink Filling & Automated Stream Order Extraction',
-    rating: 5,
-  },
-  {
-    id: 'r3-2',
-    name: 'Rohan Deshpande',
-    role: 'GIS Project Coordinator',
-    company: 'Reliance Jio Fiber GIS Operations',
-    course: 'Certificate Course in GIS (Three Month)',
-    prevBackground: 'B.Sc. Physics & IT',
-    quote:
-      'Got placed within 3 weeks of completing the 3-month GIS course. The placement team helped refine my resume and prepared me thoroughly for GIS technical interview rounds.',
-    project: 'Telecom Utility Fiber Network Route Optimization & As-Built GIS',
-    rating: 5,
-  },
-  {
-    id: 'r3-3',
-    name: 'Aditya More',
-    role: 'Cadastral GIS Specialist',
-    company: 'State Land Records Project',
-    course: 'Three-Month Certificate Course in GIS & Land Surveying',
-    prevBackground: 'Civil Draughtsman / Surveyor',
-    quote:
-      'Learning how to georeference old village revenue maps (7/12 land records) and align them with satellite imagery and GPS coordinates helped me secure a high-paying consulting role.',
-    project: 'Village Cadastral Revenue Map Digitization & Georeferencing',
-    rating: 5,
-  },
-  {
-    id: 'r3-4',
-    name: 'Divya Nair',
-    role: 'Remote Sensing Researcher',
-    company: 'AgroSpatial Research Labs',
-    course: 'Certificate Course in GIS & RS (Six Month)',
-    prevBackground: 'M.Sc. Agriculture',
-    quote:
-      'Hands-on multi-spectral satellite image processing for crop health monitoring and yield estimation. The institute’s lab at FC Road Pune has excellent high-performance systems.',
-    project: 'Crop Health NDVI Monitoring & Drought Stress Assessment',
-    rating: 5,
-  },
-  {
-    id: 'r3-5',
-    name: 'Nikhil Rane',
-    role: 'ArcGIS Desktop Specialist',
-    company: 'Urban Infra Planners',
-    course: 'Certificate Course in Single Software (One Month)',
-    prevBackground: 'Civil Engineering Graduate',
-    quote:
-      'Completed the 1-month intensive ArcGIS Pro module. The trainer explained geodatabases, ModelBuilder automation, and spatial analysis tools step-by-step with practical assignments.',
-    project: 'Highway Corridor 100m Buffer & Environmental Impact Assessment',
-    rating: 5,
-  },
-]
+const ROW_1 = STUDENT_TESTIMONIALS.slice(0, 4)
+const ROW_2 = STUDENT_TESTIMONIALS.slice(4, 8)
+const ROW_3 = STUDENT_TESTIMONIALS.slice(8, 12)
 
 export function StudentTestimonialsCarousel() {
   const [isPaused, setIsPaused] = useState(false)
@@ -233,15 +175,15 @@ export function StudentTestimonialsCarousel() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] [background-size:32px_32px] dark:[background-image:linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)]" />
 
       {/* Left and Right Gradient Fade Overlays */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 sm:w-32 bg-gradient-to-r from-background via-background/80 to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 sm:w-32 bg-gradient-to-l from-background via-background/80 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-12 sm:w-28 bg-gradient-to-r from-background via-background/80 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-12 sm:w-28 bg-gradient-to-l from-background via-background/80 to-transparent" />
 
       <div className="container-page relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
-              <Eyebrow>ALUMNI SUCCESS &amp; REVIEWS</Eyebrow>
+              <Eyebrow>VERIFIED ALUMNI SUCCESS</Eyebrow>
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[0.7rem] font-bold text-emerald-600 dark:text-emerald-400">
                 <ShieldCheck className="size-3" /> ISO 9001:2015 Certified
               </span>
@@ -250,66 +192,63 @@ export function StudentTestimonialsCarousel() {
               What Our <span className="text-primary">Graduates Say</span>
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              Real career journeys, job placements, and course feedback from engineers, surveyors,
-              geographers, and analysts across our 6-Month, 3-Month, Land Surveying, and Python GIS programs.
+              Real career journeys, job placements, and authentic feedback from alumni trained at our Shreenath Plaza, FC Road Pune lab.
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <Link
               href="/courses"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-md bg-navy px-4 py-2 text-xs font-bold uppercase tracking-wider text-navy-foreground hover:bg-navy/90 transition-colors dark:bg-primary dark:text-primary-foreground"
+              className="inline-flex items-center gap-1.5 rounded-md bg-navy px-4 py-2 text-xs font-bold uppercase tracking-wider text-navy-foreground hover:bg-navy/90 transition-colors dark:bg-primary dark:text-primary-foreground"
             >
-              Explore All Courses &rarr;
+              Explore 6 Certified Tracks &rarr;
             </Link>
           </div>
         </div>
       </div>
 
-      {/* 3 Infinite Scrolling Rows Container */}
+      {/* 3 Infinite Scrolling Rows Container with real student photos */}
       <div
-        className={`mt-12 space-y-6 overflow-hidden ${isPaused ? '' : 'marquee-pause-hover'
-          }`}
+        className="mt-12 space-y-6 overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
         {/* ROW 1: Moves Left to Right */}
         <div className="overflow-hidden">
           <div
-            className={`animate-marquee-ltr-row1 flex items-center gap-6 ${isPaused ? '[animation-play-state:paused]' : ''
-              }`}
+            className={`animate-marquee-ltr-row1 flex items-center gap-6 ${
+              isPaused ? '[animation-play-state:paused]' : ''
+            }`}
           >
-            {[...ROW_1_TESTIMONIALS, ...ROW_1_TESTIMONIALS, ...ROW_1_TESTIMONIALS].map(
-              (item, idx) => (
-                <TestimonialCard key={`r1-${item.id}-${idx}`} data={item} />
-              )
-            )}
+            {[...ROW_1, ...ROW_1, ...ROW_1, ...ROW_1].map((item, idx) => (
+              <TestimonialCard key={`r1-${item.id}-${idx}`} data={item} />
+            ))}
           </div>
         </div>
 
         {/* ROW 2: Moves Left to Right (offset speed) */}
         <div className="overflow-hidden">
           <div
-            className={`animate-marquee-ltr-row2 flex items-center gap-6 ${isPaused ? '[animation-play-state:paused]' : ''
-              }`}
+            className={`animate-marquee-ltr-row2 flex items-center gap-6 ${
+              isPaused ? '[animation-play-state:paused]' : ''
+            }`}
           >
-            {[...ROW_2_TESTIMONIALS, ...ROW_2_TESTIMONIALS, ...ROW_2_TESTIMONIALS].map(
-              (item, idx) => (
-                <TestimonialCard key={`r2-${item.id}-${idx}`} data={item} />
-              )
-            )}
+            {[...ROW_2, ...ROW_2, ...ROW_2, ...ROW_2].map((item, idx) => (
+              <TestimonialCard key={`r2-${item.id}-${idx}`} data={item} />
+            ))}
           </div>
         </div>
 
         {/* ROW 3: Moves Right to Left */}
         <div className="overflow-hidden">
           <div
-            className={`animate-marquee-rtl-row3 flex items-center gap-6 ${isPaused ? '[animation-play-state:paused]' : ''
-              }`}
+            className={`animate-marquee-rtl-row3 flex items-center gap-6 ${
+              isPaused ? '[animation-play-state:paused]' : ''
+            }`}
           >
-            {[...ROW_3_TESTIMONIALS, ...ROW_3_TESTIMONIALS, ...ROW_3_TESTIMONIALS].map(
-              (item, idx) => (
-                <TestimonialCard key={`r3-${item.id}-${idx}`} data={item} />
-              )
-            )}
+            {[...ROW_3, ...ROW_3, ...ROW_3, ...ROW_3].map((item, idx) => (
+              <TestimonialCard key={`r3-${item.id}-${idx}`} data={item} />
+            ))}
           </div>
         </div>
       </div>
@@ -318,25 +257,25 @@ export function StudentTestimonialsCarousel() {
       <div className="container-page mt-12 relative z-10">
         <div className="grid grid-cols-2 gap-4 rounded-xl border border-border bg-card p-5 sm:grid-cols-4 sm:p-6 text-center shadow-sm">
           <div>
-            <p className="font-display text-2xl font-extrabold text-foreground sm:text-3xl">4.9 / 5.0</p>
+            <p className="font-display text-2xl font-extrabold text-foreground sm:text-3xl">500+ Alumni</p>
             <p className="mt-0.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-              ⭐ 350+ Verified Reviews
+              Trained across Maharashtra
             </p>
           </div>
           <div>
-            <p className="font-display text-2xl font-extrabold text-foreground sm:text-3xl">100%</p>
+            <p className="font-display text-2xl font-extrabold text-foreground sm:text-3xl text-primary">100%</p>
             <p className="mt-0.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Practical &amp; Job-Oriented
             </p>
           </div>
           <div>
-            <p className="font-display text-2xl font-extrabold text-foreground sm:text-3xl">5 Tracks</p>
+            <p className="font-display text-2xl font-extrabold text-foreground sm:text-3xl">6 Tracks</p>
             <p className="mt-0.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-              GIS, RS, Survey &amp; Python
+              GIS, RS, Survey, Dev &amp; Python
             </p>
           </div>
           <div>
-            <p className="font-display text-2xl font-extrabold text-foreground sm:text-3xl">ISO 9001</p>
+            <p className="font-display text-2xl font-extrabold text-foreground sm:text-3xl text-emerald-600 dark:text-emerald-400">ISO 9001</p>
             <p className="mt-0.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
               2015 Certified Institute
             </p>
@@ -347,13 +286,14 @@ export function StudentTestimonialsCarousel() {
   )
 }
 
-function TestimonialCard({ data }: { data: TestimonialCardData }) {
-  // Generate initials for clean typography badge without face photos
+function TestimonialCard({ data }: { data: RealStudentTestimonial }) {
+  const [imgError, setImgError] = useState(false)
   const initials = data.name
     .split(' ')
     .map((n) => n[0])
     .join('')
     .substring(0, 2)
+    .toUpperCase()
 
   return (
     <div className="w-[340px] sm:w-[380px] shrink-0 rounded-xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between">
@@ -366,6 +306,9 @@ function TestimonialCard({ data }: { data: TestimonialCardData }) {
             ))}
             <span className="ml-1 text-[0.7rem] font-bold text-foreground">5.0</span>
           </div>
+          <span className="inline-flex items-center gap-1 rounded bg-emerald-500/10 px-2 py-0.5 text-[0.65rem] font-bold text-emerald-600 dark:text-emerald-400">
+            <CheckCircle2 className="size-3" /> Placed
+          </span>
         </div>
 
         {/* Course Badge */}
@@ -381,20 +324,35 @@ function TestimonialCard({ data }: { data: TestimonialCardData }) {
         </blockquote>
       </div>
 
-      {/* Footer / Student Info (No face photos, pure elegant card typography) */}
+      {/* Footer with Student Photo from /testimonial/ */}
       <div className="mt-4 border-t border-border pt-3 flex items-center gap-3">
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-bold text-white shadow dark:bg-primary dark:text-primary-foreground">
-          {initials}
-        </span>
+        <div className="relative size-12 shrink-0 overflow-hidden rounded-full border-2 border-primary/40 bg-muted shadow-sm">
+          {!imgError ? (
+            <Image
+              src={data.image}
+              alt={data.name}
+              fill
+              sizes="48px"
+              className="object-cover"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <span className="flex h-full w-full items-center justify-center bg-navy text-xs font-bold text-white dark:bg-primary dark:text-primary-foreground">
+              {initials}
+            </span>
+          )}
+        </div>
+
         <div className="min-w-0">
           <h4 className="font-display text-xs font-bold text-foreground truncate">
             {data.name}
           </h4>
-          <p className="text-[0.7rem] text-primary font-medium truncate">
-            {data.role} • <span className="text-muted-foreground">{data.company}</span>
+          <p className="text-[0.72rem] font-semibold text-primary truncate">
+            {data.role}
           </p>
-          <p className="text-[0.65rem] text-muted-foreground truncate">
-            Prior: {data.prevBackground}
+          <p className="text-[0.68rem] font-medium text-muted-foreground truncate flex items-center gap-1">
+            <Briefcase className="size-3 shrink-0 text-muted-foreground" />
+            <span className="truncate">{data.company}</span>
           </p>
         </div>
       </div>

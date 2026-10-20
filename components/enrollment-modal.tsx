@@ -10,11 +10,13 @@ export type EnrollmentModalProps = {
 }
 
 const COURSES_OPTIONS = [
-  'Python with GIS (Full Comprehensive Program)',
-  'GIS Fundamentals & Spatial Analysis (QGIS/ArcGIS)',
-  'Python for Geospatial Automation (GeoPandas & Rasterio)',
-  'DEM Hydrology & Terrain Modeling Masterclass',
-  'Custom Academic & Capstone GIS Project Support',
+  'Book 2-Day Free Trial Demo Session',
+  'GIS & RS (6 Month Diploma)',
+  'GIS Developer (6 Month Track)',
+  'GIS (3 Month Certificate)',
+  'GIS & Land Surveying (3 Month)',
+  'GIS Python (1 Month Fast-Track)',
+  'Single Software (1 Month Mastery)',
 ]
 
 export function EnrollmentModal({ isOpen, onClose, defaultCourse }: EnrollmentModalProps) {
