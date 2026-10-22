@@ -11,7 +11,6 @@ import {
   MapPin,
   ShieldCheck,
   Sparkles,
-  TrendingUp,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/primitives'
 
